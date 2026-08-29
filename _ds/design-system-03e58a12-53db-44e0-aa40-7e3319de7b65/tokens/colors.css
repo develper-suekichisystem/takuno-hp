@@ -1,0 +1,31 @@
+:root{
+  /* Base — navy ink, sampled from the logo, business card and site mockup */
+  --navy-900:#00183e; --navy-800:#062242; --navy-700:#03294e; --navy-600:#0a3663; --navy-500:#123f72;
+  --blue-500:#034683; --blue-400:#1f5fa8; --blue-300:#4d82bd;
+  /* Base — neutrals */
+  --white:#ffffff; --sky-50:#f7f8fb; --sky-100:#f2f5fa; --sky-200:#edf2f8; --line-200:#d8dfe8; --line-300:#c2ccd9;
+  --ink-900:#0b1520; --ink-700:#354a5e; --ink-500:#596675; --ink-300:#9aa6b4;
+  /* Base — on-dark */
+  --on-navy-100:#ffffff; --on-navy-80:rgba(255,255,255,.80); --on-navy-60:rgba(255,255,255,.60); --on-navy-14:rgba(255,255,255,.14);
+  /* Intentional additions — no semantic colours appear in the source material */
+  --state-danger:#9b2c2c; --state-success:#1f6b4a;
+
+  /* Semantic aliases */
+  --surface-page:var(--white);
+  --surface-muted:var(--sky-100);
+  --surface-card:var(--white);
+  --surface-inverse:var(--navy-800);
+  --surface-chip:var(--sky-200);
+  --text-display:var(--navy-800);
+  --text-heading:var(--navy-800);
+  --text-body:var(--ink-700);
+  --text-muted:var(--ink-500);
+  --text-on-inverse:var(--on-navy-100);
+  --text-on-inverse-muted:var(--on-navy-80);
+  --border-hairline:var(--line-200);
+  --border-strong:var(--line-300);
+  --border-on-inverse:var(--on-navy-14);
+  --accent:var(--blue-500);
+  --accent-hover:var(--navy-800);
+  --focus-ring:var(--blue-400);
+}

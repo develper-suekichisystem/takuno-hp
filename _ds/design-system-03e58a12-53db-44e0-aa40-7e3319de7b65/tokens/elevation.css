@@ -1,0 +1,8 @@
+:root{
+  --shadow-card:0 1px 3px rgba(0,24,62,.08);
+  --shadow-raised:0 8px 24px rgba(0,24,62,.10);
+  --shadow-photo:0 2px 12px rgba(0,24,62,.14);
+  --shadow-header:0 1px 0 rgba(0,24,62,.08);
+  --scrim-hero:linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.55) 38%,rgba(255,255,255,0) 62%); /* @kind other */
+  --scrim-portrait:linear-gradient(90deg,rgba(6,34,66,0) 55%,var(--navy-800) 100%); /* @kind other */
+}

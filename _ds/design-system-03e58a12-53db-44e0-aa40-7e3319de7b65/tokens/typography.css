@@ -1,0 +1,22 @@
+:root{
+  --font-mincho:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --font-gothic:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --font-display:var(--font-mincho);
+  --font-heading:var(--font-mincho);
+  --font-body:var(--font-gothic);
+
+  --fs-display:56px; --fs-h1:40px; --fs-h2:32px; --fs-h3:24px; --fs-lead:18px;
+  --fs-body:16px; --fs-sm:14px; --fs-xs:12px;
+  --lh-display:1.32; /* @kind other */
+  --lh-heading:1.4; /* @kind other */
+  --lh-body:1.9; /* @kind other */
+  --lh-tight:1.5; /* @kind other */
+  --fw-regular:400; /* @kind other */
+  --fw-medium:500; /* @kind other */
+  --fw-semibold:600; /* @kind other */
+  --fw-bold:700; /* @kind other */
+  --ls-display:.08em; /* @kind other */
+  --ls-heading:.06em; /* @kind other */
+  --ls-body:.02em; /* @kind other */
+  --ls-latin-caps:.28em; /* @kind other */
+}

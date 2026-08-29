@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/tokens/colors.css">
+<link rel="stylesheet" href="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/tokens/typography.css">
+<link rel="stylesheet" href="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/tokens/motion.css">
+<link rel="stylesheet" href="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/tokens/base.css">
+<link rel="stylesheet" href="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/styles.css">
+<script src="_ds/design-system-03e58a12-53db-44e0-aa40-7e3319de7b65/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0}
+*{box-sizing:border-box}
+img{max-width:100%}
+a{color:#034683;text-decoration:none}
+a:hover{color:#062242}
+</style>
+</helmet>
+<div style="font-family:var(--font-gothic, 'Noto Sans JP', sans-serif);color:#354a5e;background:#fff;overflow-x:clip">
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:saturate(160%) blur(10px);box-shadow:0 1px 0 rgba(0,24,62,.1)">
+<div style="max-width:1120px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 32px">
+<a href="#top" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+<img src="assets/logo-vertical.png" alt="" style="height:clamp(32px,6vw,42px);width:auto;display:block">
+<span style="display:flex;flex-direction:column;gap:3px">
+<span style="font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(16px,2.4vw,20px);font-weight:600;letter-spacing:.1em;color:#00183e;white-space:nowrap">株式会社 拓乃</span>
+<span style="font-size:9px;letter-spacing:.28em;color:#596675;white-space:nowrap">TAKUNO CO.,LTD.</span>
+</span>
+</a>
+<nav style="display:flex;align-items:center;flex-wrap:wrap;gap:10px 24px;font-size:clamp(12px,1.4vw,14px);font-weight:500;letter-spacing:.06em">
+<a href="#service" style="color:#354a5e;padding-bottom:3px">業務内容</a>
+<a href="#philosophy" style="color:#354a5e;padding-bottom:3px">私たちの仕事</a>
+<a href="#works" style="color:#354a5e;padding-bottom:3px">施工現場</a>
+<a href="#company" style="color:#354a5e;padding-bottom:3px">会社概要</a>
+<a href="#contact" style="color:#354a5e;padding-bottom:3px">お問い合わせ</a>
+</nav>
+</div>
+</header>
+
+<section id="top" style="position:relative;min-height:clamp(440px,72vh,620px);display:flex;overflow:hidden">
+<img src="assets/photo-hero-scaffold-sunset.jpeg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 35%,rgba(255,255,255,.45) 100%)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.5) 40%,rgba(255,255,255,0) 66%)"></div>
+<div style="position:relative;max-width:1120px;width:100%;margin:0 auto;padding:clamp(72px,10vw,120px) 20px clamp(56px,8vw,96px);display:flex;flex-direction:column;justify-content:flex-end;gap:clamp(16px,2.4vw,28px)">
+<span style="font-size:clamp(10px,1.2vw,11px);letter-spacing:.28em;color:#034683">SCAFFOLDING &amp; EXTERIOR WORKS</span>
+<h1 style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(34px,7vw,60px);font-weight:600;line-height:1.34;letter-spacing:.08em;color:#062242">足元から<br>未来を支える</h1>
+<p style="margin:0;font-size:clamp(15px,2vw,18px);letter-spacing:.06em;color:#062242">確かな技術と信頼で、安心・安全な足場を。</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+<a href="#contact" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:14px 26px;background:#062242;color:#fff;font-size:15px;letter-spacing:.08em;border-radius:2px;transition:background 160ms cubic-bezier(.22,.61,.36,1)" style-hover="background:#034683;color:#fff">お問い合わせ<span>→</span></a>
+<a href="#service" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:14px 26px;border:1px solid #d8dfe8;color:#062242;font-size:15px;letter-spacing:.08em;border-radius:2px;background:rgba(255,255,255,.7);transition:background 160ms cubic-bezier(.22,.61,.36,1)" style-hover="background:#f2f5fa;border-color:#c2ccd9">業務内容を見る</a>
+</div>
+</div>
+</section>
+
+<section id="service" style="background:#f2f5fa;padding:clamp(56px,8vw,96px) 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:clamp(48px,6vw,72px)">
+<div style="display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,72px);align-items:flex-start">
+<div style="flex:1 1 320px;display:flex;flex-direction:column;gap:20px">
+<span style="font-size:11px;letter-spacing:.28em;color:#034683">SERVICE</span>
+<h2 style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(24px,4vw,34px);font-weight:600;line-height:1.5;letter-spacing:.06em;color:#062242;white-space:nowrap">各専門業者と連携した<br>幅広い対応力</h2>
+</div>
+<p style="flex:1 1 380px;margin:0;font-size:clamp(15px,1.7vw,16px);line-height:1.95;color:#354a5e;text-wrap:pretty">私たちは、各分野の専門業者と強固に連携し、足場工事をはじめとする多様な工事に一括で対応いたします。足場の組立・解体から外壁塗装、屋根、防水、リフォームまで、窓口を一つにまとめることで、工程の調整も現場での連絡も滞りなく進みます。お客様のご要望に合わせた最適なご提案と、高品質な施工をお約束します。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+<div style="display:flex;align-items:center;gap:20px">
+<span style="flex:1;height:1px;background:#c2ccd9"></span>
+<h3 style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:.06em;color:#062242;white-space:nowrap">業務内容</h3>
+<span style="flex:1;height:1px;background:#c2ccd9"></span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:24px 16px;justify-items:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+<span style="width:96px;height:96px;border-radius:999px;background:#e7eef7;display:flex;align-items:center;justify-content:center;transition:background 240ms cubic-bezier(.22,.61,.36,1)">
+<svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="#062242" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+<rect x="8" y="8" width="32" height="32"></rect>
+<path d="M8 18.7h32M8 29.3h32M18.7 8v32M29.3 8v32"></path>
+<path d="M8 18.7 18.7 8M29.3 40 40 29.3" stroke-width="1.2"></path>
+</svg>
+</span>
+<span style="font-size:13px;letter-spacing:.06em;color:#062242;white-space:nowrap">足場工事一式</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+<span style="width:96px;height:96px;border-radius:999px;background:#e7eef7;display:flex;align-items:center;justify-content:center;transition:background 240ms cubic-bezier(.22,.61,.36,1)">
+<svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="#062242" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+<rect x="9" y="9" width="24" height="10"></rect>
+<path d="M33 14h5v7H24v6"></path>
+<rect x="19" y="27" width="10" height="12"></rect>
+</svg>
+</span>
+<span style="font-size:13px;letter-spacing:.06em;color:#062242;white-space:nowrap">外壁塗装</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+<span style="width:96px;height:96px;border-radius:999px;background:#e7eef7;display:flex;align-items:center;justify-content:center;transition:background 240ms cubic-bezier(.22,.61,.36,1)">
+<svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="#062242" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+<path d="M5 25 24 10l19 15"></path>
+<path d="M10 22v17h28V22"></path>
+<path d="M19 39V29h10v10" stroke-width="1.2"></path>
+</svg>
+</span>
+<span style="font-size:13px;letter-spacing:.06em;color:#062242;white-space:nowrap">屋根工事</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+<span style="width:96px;height:96px;border-radius:999px;background:#e7eef7;display:flex;align-items:center;justify-content:center;transition:background 240ms cubic-bezier(.22,.61,.36,1)">
+<svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="#062242" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+<path d="M24 6c6.5 8 10 13.6 10 18.5A10 10 0 0 1 14 24.5C14 19.6 17.5 14 24 6Z"></path>
+<path d="M7 37c3-2.6 5.5-2.6 8.5 0s5.5 2.6 8.5 0 5.5-2.6 8.5 0 5.5 2.6 8.5 0" stroke-width="1.3"></path>
+</svg>
+</span>
+<span style="font-size:13px;letter-spacing:.06em;color:#062242;white-space:nowrap">防水工事</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+<span style="width:96px;height:96px;border-radius:999px;background:#e7eef7;display:flex;align-items:center;justify-content:center;transition:background 240ms cubic-bezier(.22,.61,.36,1)">
+<svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="#062242" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+<path d="M8 24 24 11l16 13"></path>
+<path d="M12 22v17h24V22"></path>
+<path d="M20 34.5 30 24.5" stroke-linecap="round"></path>
+<path d="M29 22.5a3.6 3.6 0 0 1 5 5l-2.5-2.5Z" fill="#062242" stroke-linejoin="round"></path>
+<circle cx="19" cy="35.5" r="1.6" fill="#062242" stroke="none"></circle>
+</svg>
+</span>
+<span style="font-size:13px;letter-spacing:.06em;color:#062242;white-space:nowrap">各種リフォーム</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="philosophy" style="background:#062242">
+<div style="max-width:880px;margin:0 auto;padding:clamp(64px,9vw,120px) 20px">
+<div style="display:flex;flex-direction:column;gap:clamp(32px,4.5vw,48px)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center">
+<span style="font-size:11px;letter-spacing:.28em;color:rgba(255,255,255,.6)">PHILOSOPHY</span>
+<h2 style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.45;letter-spacing:.08em;color:#fff">未来を支える、私たちの仕事</h2>
+<span style="width:48px;height:1px;background:rgba(255,255,255,.35)"></span>
+</div>
+<div style="font-size:clamp(14px,1.7vw,15px);line-height:2.15;letter-spacing:.02em;color:rgba(255,255,255,.8);display:flex;flex-direction:column;gap:28px">
+<p style="margin:0">20年以上、現場に立ち続ける中で、私が大切にしてきたのは、<br>一つひとつの仕事に、本気で向き合うことです。</p>
+<p style="margin:0">足場は、ただ建物を囲うものではありません。<br>その上で職人が仕事をし、建物が仕上がっていく。<br>だからこそ、安全であることはもちろん、実際に使う職人の目線に立ち、使いやすさまで考え抜いた足場でなければならないと考えています。</p>
+<p style="margin:0">現場では、業者様とのコミュニケーションを何より大切にしています。</p>
+<p style="margin:0">要望に対して丁寧に、そして迅速に応え<br>長くお付き合いいただいている協力会社様とも、仕事だからこそ誠実に向き合い、信頼を積み重ねていく。<br>それが、良い現場をつくるために欠かせないことだと思っています。</p>
+<p style="margin:clamp(4px,1vw,12px) 0;padding:clamp(24px,3.5vw,36px) 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);text-align:center;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(22px,3.6vw,30px);line-height:1.6;letter-spacing:.1em;color:#fff">『足元から未来を支える。』</p>
+<p style="margin:0">これからも現場に立つ一人ひとりの仕事を支え、<br>その先にある建物と、そこで暮らす人・働く人の未来まで支えられる仕事を続けていきます。</p>
+</div>
+<div style="display:flex;align-items:baseline;justify-content:flex-end;gap:16px">
+<span style="font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.6)">代表取締役</span>
+<span style="font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(20px,2.6vw,24px);letter-spacing:.06em;color:#fff">岡田 拓磨</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="works" style="padding:clamp(56px,8vw,96px) 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:clamp(36px,5vw,56px)">
+<div style="display:flex;align-items:center;gap:20px">
+<span style="flex:1;height:1px;background:#c2ccd9"></span>
+<h2 style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(22px,3.6vw,32px);font-weight:600;letter-spacing:.06em;color:#062242;white-space:nowrap">施工現場</h2>
+<span style="flex:1;height:1px;background:#c2ccd9"></span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;width:100%">
+<img src="assets/site-01.jpeg" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;display:block">
+<img src="assets/site-02.jpeg" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;display:block">
+<img src="assets/site-03.jpeg" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;display:block">
+<img src="assets/site-04.jpeg" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;display:block">
+<img src="assets/site-05.jpeg" alt="" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;display:block">
+</div>
+</div>
+</section>
+
+<section style="background:#f2f5fa;padding:clamp(56px,8vw,96px) 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:center">
+<div style="flex:1 1 300px;display:flex;flex-direction:column;gap:18px">
+<span style="font-size:11px;letter-spacing:.28em;color:#034683">OFFICE</span>
+<h2 style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(22px,3.6vw,32px);font-weight:600;line-height:1.45;letter-spacing:.06em;color:#062242">会社外観</h2>
+<p style="margin:0;font-size:clamp(14px,1.7vw,15px);line-height:1.95;color:#354a5e">愛知県知多郡東浦町に事務所を構え、知多半島から名古屋市周辺まで対応しております。</p>
+</div>
+<div style="flex:1 1 320px;position:relative;width:100%;aspect-ratio:4/3;box-shadow:0 2px 12px rgba(0,24,62,.08)">
+<img src="assets/office-exterior.jpeg" alt="株式会社 拓乃 会社外観" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+</div>
+</div>
+</section>
+
+<section id="company" style="padding:clamp(56px,8vw,96px) 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:clamp(36px,5vw,72px);align-items:flex-start">
+<div style="flex:1 1 380px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:18px">
+<span style="font-size:11px;letter-spacing:.28em;color:#034683">COMPANY</span>
+<h2 style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(22px,3.6vw,32px);font-weight:600;letter-spacing:.06em;color:#062242">会社概要</h2>
+</div>
+<dl style="margin:0;display:grid;grid-template-columns:minmax(88px,120px) 1fr;font-size:clamp(14px,1.7vw,15px);line-height:1.9;border-top:1px solid #d8dfe8">
+<dt style="padding:16px 8px 16px 0;color:#062242;font-weight:500;border-bottom:1px solid #d8dfe8">会社名</dt>
+<dd style="margin:0;padding:16px 0;border-bottom:1px solid #d8dfe8">株式会社 拓乃（TAKUNO CO.,LTD.）</dd>
+<dt style="padding:16px 8px 16px 0;color:#062242;font-weight:500;border-bottom:1px solid #d8dfe8">代表者</dt>
+<dd style="margin:0;padding:16px 0;border-bottom:1px solid #d8dfe8">代表取締役　岡田 拓磨</dd>
+<dt style="padding:16px 8px 16px 0;color:#062242;font-weight:500;border-bottom:1px solid #d8dfe8">所在地</dt>
+<dd style="margin:0;padding:16px 0;border-bottom:1px solid #d8dfe8">〒470-2104<br>愛知県知多郡東浦町生路上坪釜23-1</dd>
+<dt style="padding:16px 8px 16px 0;color:#062242;font-weight:500;border-bottom:1px solid #d8dfe8">電話</dt>
+<dd style="margin:0;padding:16px 0;border-bottom:1px solid #d8dfe8">0562-85-9488 ｜ FAX 0562-22-5296</dd>
+<dt style="padding:16px 8px 16px 0;color:#062242;font-weight:500;border-bottom:1px solid #d8dfe8">メール</dt>
+<dd style="margin:0;padding:16px 0;border-bottom:1px solid #d8dfe8;word-break:break-all"><a href="mailto:okada.tmrkn@outlook.jp">okada.tmrkn@outlook.jp</a></dd>
+<dt style="padding:16px 8px 16px 0;color:#062242;font-weight:500;border-bottom:1px solid #d8dfe8">事業内容</dt>
+<dd style="margin:0;padding:16px 0;border-bottom:1px solid #d8dfe8">足場工事一式・外壁塗装・屋根工事・防水工事・各種リフォーム</dd>
+<dt style="padding:16px 8px 16px 0;color:#062242;font-weight:500;border-bottom:1px solid #d8dfe8">建設業許可</dt>
+<dd style="margin:0;padding:16px 0;border-bottom:1px solid #d8dfe8">愛知県知事許可（般-7）第85337号</dd>
+</dl>
+</div>
+<div style="flex:1 1 320px;display:flex;flex-direction:column;gap:14px">
+<div style="position:relative;width:100%;height:clamp(280px,45vh,520px);background:#f2f5fa">
+<iframe title="株式会社 拓乃 所在地" src="https://www.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E5%A4%9A%E9%83%A1%E6%9D%B1%E6%B5%A6%E7%94%BA%E7%94%9F%E8%B7%AF%E4%B8%8A%E5%9D%AA%E9%87%9C23-1&amp;hl=ja&amp;z=16&amp;output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block"></iframe>
+</div>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E5%A4%9A%E9%83%A1%E6%9D%B1%E6%B5%A6%E7%94%BA%E7%94%9F%E8%B7%AF%E4%B8%8A%E5%9D%AA%E9%87%9C23-1" target="_blank" rel="noopener" style="align-self:flex-start;font-size:13px;letter-spacing:.04em">Google マップで開く →</a>
+</div>
+</div>
+</section>
+
+<section id="contact" style="background:#f2f5fa;padding:clamp(56px,8vw,96px) 0">
+<div style="max-width:1120px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
+<div style="flex:2 1 480px;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+<div style="display:flex;flex-direction:column;gap:18px">
+<span style="font-size:11px;letter-spacing:.28em;color:#034683">CONTACT</span>
+<h2 style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(22px,3.6vw,32px);font-weight:600;letter-spacing:.06em;color:#062242">お問い合わせ</h2>
+<p style="margin:0;font-size:clamp(14px,1.7vw,15px);line-height:1.95;color:#354a5e">足場工事のご相談、お見積りのご依頼を承ります。内容を確認のうえ、担当者より折り返しご連絡いたします。</p>
+</div>
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div style="background:#fff;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:12px">
+<p style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(18px,2.6vw,22px);letter-spacing:.06em;color:#062242">送信を承りました</p>
+<p style="margin:0;font-size:14px;line-height:1.9">内容を確認のうえ、担当者より折り返しご連絡いたします。お急ぎの場合はお電話にてご連絡ください。</p>
+</div>
+</sc-if>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:24px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px">
+<x-import component-from-global-scope="DesignSystem_03e58a.Input" label="お名前" required="{{ true }}" value="{{ f.name }}" onChange="{{ setName }}" placeholder="山田 太郎" hint-size="100%,86px"></x-import>
+<x-import component-from-global-scope="DesignSystem_03e58a.Input" label="会社名" value="{{ f.company }}" onChange="{{ setCompany }}" placeholder="株式会社〇〇" hint-size="100%,86px"></x-import>
+<x-import component-from-global-scope="DesignSystem_03e58a.Input" label="電話番号" required="{{ true }}" type="tel" value="{{ f.tel }}" onChange="{{ setTel }}" placeholder="0562-00-0000" hint-size="100%,86px"></x-import>
+<x-import component-from-global-scope="DesignSystem_03e58a.Input" label="メールアドレス" required="{{ true }}" type="email" value="{{ f.email }}" onChange="{{ setEmail }}" placeholder="info@example.jp" hint-size="100%,86px"></x-import>
+</div>
+<x-import component-from-global-scope="DesignSystem_03e58a.Select" label="ご相談の内容" required="{{ true }}" options="{{ topics }}" value="{{ f.topic }}" onChange="{{ setTopic }}" hint-size="100%,86px"></x-import>
+<x-import component-from-global-scope="DesignSystem_03e58a.Textarea" label="お問い合わせ内容" required="{{ true }}" value="{{ f.body }}" onChange="{{ setBody }}" placeholder="現場の所在地、建物の規模、ご希望の時期などをご記入ください。" hint-size="100%,180px"></x-import>
+<x-import component-from-global-scope="DesignSystem_03e58a.Checkbox" label="個人情報の取り扱いについて同意します" checked="{{ f.agree }}" onChange="{{ setAgree }}" hint-size="100%,28px"></x-import>
+<button type="submit" style="align-self:stretch;max-width:280px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 32px;background:#062242;color:#fff;font-family:inherit;font-size:15px;letter-spacing:.08em;border:0;border-radius:2px;cursor:pointer;transition:background 160ms cubic-bezier(.22,.61,.36,1)" style-hover="background:#034683">送信する<span>→</span></button>
+</form>
+</sc-if>
+</div>
+<aside style="flex:1 1 300px;background:#fff;padding:clamp(28px,4vw,40px) clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:24px">
+<p style="margin:0;font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:18px;letter-spacing:.06em;color:#062242">お電話でのご相談</p>
+<div style="display:flex;flex-direction:column;gap:6px">
+<a href="tel:0562859488" style="font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(24px,3.4vw,28px);letter-spacing:.04em;color:#062242">0562-85-9488</a>
+<span style="font-size:13px;color:#596675">FAX 0562-22-5296</span>
+</div>
+<div style="height:1px;background:#d8dfe8"></div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.8">
+<div style="display:flex;gap:12px"><span style="width:18px;text-align:center;color:#034683">◆</span><span>〒470-2104<br>愛知県知多郡東浦町生路上坪釜23-1</span></div>
+<div style="display:flex;gap:12px"><span style="width:18px;text-align:center;color:#034683">✉</span><a href="mailto:okada.tmrkn@outlook.jp" style="word-break:break-all">okada.tmrkn@outlook.jp</a></div>
+</div>
+</aside>
+</div>
+</section>
+
+<footer style="background:#062242;color:rgba(255,255,255,.8);padding:clamp(48px,7vw,72px) 0 32px">
+<div style="max-width:1120px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
+<div style="flex:1 1 340px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;align-items:center;gap:16px">
+<span style="display:flex;align-items:center;justify-content:center;background:#fff;padding:10px 12px">
+<img src="assets/logo-vertical.png" alt="" style="height:clamp(42px,7vw,52px);width:auto;display:block">
+</span>
+<span style="display:flex;flex-direction:column;gap:4px">
+<span style="font-family:var(--font-mincho, 'Noto Serif JP', serif);font-size:clamp(17px,2.4vw,20px);letter-spacing:.1em;color:#fff">株式会社 拓乃</span>
+<span style="font-size:9px;letter-spacing:.28em;color:rgba(255,255,255,.6)">TAKUNO CO.,LTD.</span>
+</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.8">
+<div style="display:flex;gap:12px"><span style="width:20px;text-align:center;color:#fff">◆</span><span>〒470-2104 愛知県知多郡東浦町生路上坪釜23-1</span></div>
+<div style="display:flex;gap:12px"><span style="width:20px;text-align:center;color:#fff">✆</span><span>0562-85-9488 ｜ FAX 0562-22-5296</span></div>
+<div style="display:flex;gap:12px"><span style="width:20px;text-align:center;color:#fff">✉</span><a href="mailto:okada.tmrkn@outlook.jp" style="color:rgba(255,255,255,.8);word-break:break-all">okada.tmrkn@outlook.jp</a></div>
+</div>
+</div>
+<nav style="flex:0 1 200px;display:flex;flex-direction:column;gap:12px;font-size:14px">
+<a href="#service" style="color:rgba(255,255,255,.8)">業務内容</a>
+<a href="#philosophy" style="color:rgba(255,255,255,.8)">私たちの仕事</a>
+<a href="#works" style="color:rgba(255,255,255,.8)">施工現場</a>
+<a href="#company" style="color:rgba(255,255,255,.8)">会社概要</a>
+<a href="#contact" style="color:rgba(255,255,255,.8)">お問い合わせ</a>
+</nav>
+</div>
+<div style="max-width:1120px;margin:clamp(36px,5vw,56px) auto 0;padding:24px 20px 0;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;font-size:12px;letter-spacing:.04em;color:rgba(255,255,255,.6)">
+<span>愛知県知事許可（般-7）第85337号</span>
+<span>© TAKUNO CO.,LTD.</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false, f: { name: '', company: '', tel: '', email: '', topic: '', body: '', agree: false } };
+  set(k) {
+    return v => this.setState(s => ({ f: { ...s.f, [k]: v } }));
+  }
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      f: this.state.f,
+      topics: ['足場工事一式', '外壁塗装', '屋根工事', '防水工事', '各種リフォーム', 'その他のご相談'],
+      setName: this.set('name'),
+      setCompany: this.set('company'),
+      setTel: this.set('tel'),
+      setEmail: this.set('email'),
+      setTopic: this.set('topic'),
+      setBody: this.set('body'),
+      setAgree: this.set('agree'),
+      onSubmit: e => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
