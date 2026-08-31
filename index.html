@@ -11,7 +11,7 @@
       name="description"
       content="株式会社 拓乃は愛知県知多郡東浦町の足場工事会社です。足場の組立・解体から外壁塗装、屋根工事、防水工事、各種リフォームまで、各専門業者と連携し窓口ひとつで対応します。"
     />
-    <link rel="icon" href="assets/logo-vertical.png" />
+    <link rel="icon" href="assets/logo.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="株式会社 拓乃" />
     <meta property="og:title" content="株式会社 拓乃 ｜ 足元から未来を支える" />
@@ -26,7 +26,7 @@
   </head>
   <body>
     <div class="preloader" aria-hidden="true">
-      <img src="assets/logo-vertical.png" alt="" />
+      <img src="assets/logo.png" alt="" />
       <span class="spinner"></span>
     </div>
 
@@ -518,6 +518,10 @@
                 'fig'
                 'btn';
             }
+            .svc-main-body {
+              align-items: center;
+              text-align: center;
+            }
             .svc-main-fig {
               padding: clamp(4px, 2vw, 12px) 0;
             }
@@ -574,20 +578,34 @@
             position: relative;
             z-index: 1;
           }
-          /* --- works: スマホは折りたたみ --- */
+          /* --- works: 1行だけ表示して「もっと見る」 --- */
           .works-toggle {
             display: none;
           }
-          .works-more {
+          .works-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 8px;
+            width: 100%;
+          }
+          .works-grid > .work-thumb:nth-child(n + 5) {
             display: none;
           }
-          @media (max-width: 860px) {
+          .works-toggle:checked ~ .works-grid > .work-thumb {
+            display: block;
+          }
+          @media (max-width: 640px) {
+            .works-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
             .works-grid > .work-thumb:nth-child(n + 5) {
               display: none;
             }
             .works-toggle:checked ~ .works-grid > .work-thumb {
               display: block;
             }
+          }
+          @media (min-width: 0px) {
             .works-more {
               display: flex;
               align-items: center;
@@ -631,8 +649,13 @@
           }
           /* --- hero --- */
           .hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transform: scale(1.06);
-            animation: heroZoom 22s ease-out forwards;
+            animation: heroZoom 40s ease-out forwards;
             transform-origin: 62% 55%;
             will-change: transform;
           }
@@ -644,19 +667,149 @@
               transform: scale(1.16);
             }
           }
-          .hero-copy > * {
-            opacity: 0;
-            transform: translateY(14px);
-            animation: heroRise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+          /* --- 文字が転がって組み上がる --- */
+          /* 支柱：右端を上から下へ建てる */
+          .hero-copy {
+            position: relative;
           }
-          .hero-copy > *:nth-child(1) {
-            animation-delay: 0.15s;
+          .hero-copy::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -14px;
+            width: 3px;
+            background: #062242;
+            opacity: 0.32;
+            transform: scaleY(0);
+            transform-origin: top;
+            animation: heroPost 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+          }
+          @keyframes heroPost {
+            to {
+              transform: scaleY(1);
+            }
+          }
+          /* 踏板：文字が着地する地面 */
+          .hero-title .hero-line {
+            display: block;
+            position: relative;
+          }
+          .hero-title .hero-line::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -0.04em;
+            width: 100%;
+            height: 3px;
+            background: #062242;
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: heroPlank 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+          .hero-title .hero-line:nth-child(1)::after {
+            animation-delay: 0.5s;
+          }
+          .hero-title .hero-line:nth-child(2)::after {
+            animation-delay: 1.5s;
+          }
+          @keyframes heroPlank {
+            0% {
+              transform: scaleX(0);
+              opacity: 1;
+            }
+            26% {
+              transform: scaleX(1);
+              opacity: 1;
+            }
+            70% {
+              transform: scaleX(1);
+              opacity: 1;
+            }
+            100% {
+              transform: scaleX(1);
+              opacity: 0;
+            }
+          }
+          /* 一文字ずつ真上から積み上げていく */
+          .hero-title .ch {
+            display: inline-block;
+            opacity: 0;
+            transform-origin: 50% 100%;
+            animation: charStack 0.9s cubic-bezier(0.55, 0, 0.3, 1) forwards;
+          }
+          @keyframes charStack {
+            0% {
+              opacity: 0;
+              transform: translateY(-1.7em) scaleY(1.1) scaleX(0.94);
+            }
+            30% {
+              opacity: 1;
+            }
+            58% {
+              transform: translateY(0) scaleY(1) scaleX(1);
+            }
+            70% {
+              transform: translateY(0) scaleY(0.86) scaleX(1.07);
+            }
+            84% {
+              transform: translateY(-0.07em) scaleY(1.04) scaleX(0.98);
+            }
+            100% {
+              opacity: 1;
+              transform: none;
+            }
+          }
+          .hero-title .hero-line:nth-child(1) .ch:nth-child(1) {
+            animation-delay: 0.7s;
+          }
+          .hero-title .hero-line:nth-child(1) .ch:nth-child(2) {
+            animation-delay: 0.83s;
+          }
+          .hero-title .hero-line:nth-child(1) .ch:nth-child(3) {
+            animation-delay: 0.96s;
+          }
+          .hero-title .hero-line:nth-child(1) .ch:nth-child(4) {
+            animation-delay: 1.09s;
+          }
+          .hero-title .hero-line:nth-child(2) .ch:nth-child(1) {
+            animation-delay: 1.7s;
+          }
+          .hero-title .hero-line:nth-child(2) .ch:nth-child(2) {
+            animation-delay: 1.83s;
+          }
+          .hero-title .hero-line:nth-child(2) .ch:nth-child(3) {
+            animation-delay: 1.96s;
+          }
+          .hero-title .hero-line:nth-child(2) .ch:nth-child(4) {
+            animation-delay: 2.09s;
+          }
+          .hero-title .hero-line:nth-child(2) .ch:nth-child(5) {
+            animation-delay: 2.22s;
+          }
+          .hero-title .hero-line:nth-child(2) .ch:nth-child(6) {
+            animation-delay: 2.35s;
+          }
+          /* 以降の要素 */
+          .hero-copy > *:not(.hero-title),
+          .hero-actions > a {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: heroRise 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
           }
           .hero-copy > *:nth-child(2) {
-            animation-delay: 0.35s;
+            animation-delay: 3.1s;
           }
-          .hero-copy > *:nth-child(3) {
-            animation-delay: 0.55s;
+          .hero-actions > a:nth-child(1) {
+            animation-delay: 3.5s;
+          }
+          .hero-actions > a:nth-child(2) {
+            animation-delay: 3.75s;
+          }
+          .hero-copy > .hero-actions {
+            animation: none;
+            opacity: 1;
+            transform: none;
           }
           @keyframes heroRise {
             to {
@@ -666,10 +819,17 @@
           }
           @media (prefers-reduced-motion: reduce) {
             .hero-img,
-            .hero-copy > * {
+            .hero-copy > *,
+            .hero-copy::after,
+            .hero-actions > a,
+            .hero-title .ch,
+            .hero-title .hero-line::after {
               animation: none;
               opacity: 1;
               transform: none;
+            }
+            .hero-title .hero-line::after {
+              opacity: 0;
             }
           }
           .hero-copy {
@@ -680,10 +840,27 @@
             gap: clamp(16px, 2.4vw, 28px);
           }
           @media (max-width: 860px) {
-            /* スマホは少し左側を見せる */
+            /* スマホは写真全体（ヘルメット＋夕日）を下寄せで見せる */
+            #top {
+              background: linear-gradient(180deg, #e6e9f0 0%, #f4f4f5 100%);
+            }
+            /* 写真は元の比率のまま（全域表示）、文字と重なる位置へ */
             .hero-img {
-              object-position: 32% 50%;
-              transform-origin: 32% 55%;
+              top: auto;
+              bottom: 13vh;
+              height: auto;
+              object-fit: contain;
+              animation: none;
+              transform: none;
+              -webkit-mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                #000 30%
+              );
+              mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
+            }
+            .hero-inner {
+              padding: clamp(88px, 13vh, 130px) 20px clamp(72px, 10vw, 120px) !important;
             }
             .hero-copy {
               padding: 0;
@@ -694,10 +871,9 @@
             .hero-scrim-y {
               background: linear-gradient(
                 to bottom,
-                rgba(255, 255, 255, 0.94) 0%,
-                rgba(255, 255, 255, 0.86) 28%,
-                rgba(255, 255, 255, 0.6) 50%,
-                rgba(255, 255, 255, 0) 78%
+                rgba(255, 255, 255, 0.42) 0%,
+                rgba(255, 255, 255, 0.2) 35%,
+                rgba(255, 255, 255, 0) 62%
               ) !important;
             }
           }
@@ -926,7 +1102,7 @@
               "
             >
               <img
-                src="assets/logo-vertical.png"
+                src="assets/logo.png"
                 alt=""
                 style="
                   height: clamp(32px, 6vw, 42px);
@@ -971,18 +1147,7 @@
             overflow: hidden;
           "
         >
-          <img
-            src="assets/top.jpg"
-            alt=""
-            class="hero-img"
-            style="
-              position: absolute;
-              inset: 0;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            "
-          />
+          <img src="assets/top.jpg" alt="" class="hero-img" />
           <div
             style="
               position: absolute;
@@ -1010,6 +1175,7 @@
             class="hero-scrim-x"
           ></div>
           <div
+            class="hero-inner"
             style="
               position: relative;
               max-width: 1120px;
@@ -1024,6 +1190,7 @@
           >
             <div class="hero-copy">
               <h1
+                class="hero-title"
                 style="
                   margin: 0;
                   font-family: var(--font-mincho, 'Noto Serif JP', serif);
@@ -1034,7 +1201,15 @@
                   color: #062242;
                 "
               >
-                足元から<br />未来を支える
+                <span class="hero-line"
+                  ><span class="ch">足</span><span class="ch">元</span
+                  ><span class="ch">か</span><span class="ch">ら</span></span
+                >
+                <span class="hero-line"
+                  ><span class="ch">未</span><span class="ch">来</span
+                  ><span class="ch">を</span><span class="ch">支</span
+                  ><span class="ch">え</span><span class="ch">る</span></span
+                >
               </h1>
               <p
                 style="
@@ -1596,11 +1771,11 @@
                     <span>株式会社 拓乃　代表取締役</span>
                     <strong>岡田 拓磨</strong>
                   </div>
-                <img
-                  src="assets/face.png"
-                  alt="代表取締役 岡田 拓磨"
-                  loading="lazy"
-                />
+                  <img
+                    src="assets/face.png"
+                    alt="代表取締役 岡田 拓磨"
+                    loading="lazy"
+                  />
                 </div>
               </article>
             </div>
@@ -1643,70 +1818,64 @@
             />
             <div
               class="works-grid"
-              style="
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 8px;
-                width: 100%;
-              "
             >
               <a
                 class="work-thumb"
                 href="#pic-1"
-                aria-label="施工事例の写真 1 を拡大"
+                aria-label="施工現場の写真 1 を拡大"
               >
                 <img src="assets/example1.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-2"
-                aria-label="施工事例の写真 2 を拡大"
+                aria-label="施工現場の写真 2 を拡大"
               >
                 <img src="assets/example2.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-4"
-                aria-label="施工事例の写真 3 を拡大"
+                aria-label="施工現場の写真 3 を拡大"
               >
                 <img src="assets/example4.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-5"
-                aria-label="施工事例の写真 4 を拡大"
+                aria-label="施工現場の写真 4 を拡大"
               >
                 <img src="assets/example5.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-6"
-                aria-label="施工事例の写真 5 を拡大"
+                aria-label="施工現場の写真 5 を拡大"
               >
                 <img src="assets/example6.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-7"
-                aria-label="施工事例の写真 6 を拡大"
+                aria-label="施工現場の写真 6 を拡大"
               >
                 <img src="assets/example7.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-8"
-                aria-label="施工事例の写真 7 を拡大"
+                aria-label="施工現場の写真 7 を拡大"
               >
                 <img src="assets/example8.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-9"
-                aria-label="施工事例の写真 8 を拡大"
+                aria-label="施工現場の写真 8 を拡大"
               >
                 <img src="assets/example9.jpg" alt="" loading="lazy" />
               </a>
-              </div>
+            </div>
             <label for="worksToggle" class="works-more">
               <span class="works-more-open"
                 >もっと見る<i class="chev"></i
@@ -2169,6 +2338,21 @@
                   onSubmit="{{ onSubmit }}"
                   style="display: flex; flex-direction: column; gap: 24px"
                 >
+                  <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
+                    <p
+                      style="
+                        margin: 0;
+                        padding: 14px 16px;
+                        background: #fdf0f0;
+                        border-left: 3px solid #b4453d;
+                        font-size: 14px;
+                        line-height: 1.8;
+                        color: #8c332d;
+                      "
+                    >
+                      {{ error }}
+                    </p>
+                  </sc-if>
                   <div
                     style="
                       display: grid;
@@ -2234,13 +2418,6 @@
                     onChange="{{ setBody }}"
                     placeholder="現場の所在地、建物の規模、ご希望の時期などをご記入ください。"
                     hint-size="100%,180px"
-                  ></x-import>
-                  <x-import
-                    component-from-global-scope="DesignSystem_03e58a.Checkbox"
-                    label="個人情報の取り扱いについて同意します"
-                    checked="{{ f.agree }}"
-                    onChange="{{ setAgree }}"
-                    hint-size="100%,28px"
                   ></x-import>
                   <button
                     type="submit"
@@ -2374,7 +2551,7 @@
                   "
                 >
                   <img
-                    src="assets/logo-vertical.png"
+                    src="assets/logo.png"
                     alt=""
                     style="
                       height: clamp(42px, 7vw, 52px);
@@ -2476,15 +2653,43 @@
       </div>
     </x-dc>
     <script type="text/x-dc" data-dc-script>
+      /* フォーム送信先のエンドポイント（Formspree 等）をここに入れる。
+         空の間は送信されず、完了画面だけ表示される。
+         例: 'https://formspree.io/f/xxxxxxxx' */
+      const FORM_ENDPOINT = '';
+      const OWNER_MAIL = 'okada.tmrkn@outlook.jp';
+
       class Component extends DCLogic {
-        state = { sent: false, f: { name: '', company: '', tel: '', email: '', topic: '', body: '', agree: false } };
+        state = { sent: false, sending: false, error: '', f: { name: '', company: '', tel: '', email: '', topic: '', body: '' } };
         set(k) {
           return v => this.setState(s => ({ f: { ...s.f, [k]: v } }));
+        }
+        async send() {
+          const f = this.state.f;
+          const res = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+              _replyto: f.email,
+              _to: OWNER_MAIL,
+              _subject: '【拓乃】ホームページからのお問い合わせ',
+              お名前: f.name,
+              会社名: f.company,
+              電話番号: f.tel,
+              メールアドレス: f.email,
+              ご相談の内容: f.topic,
+              お問い合わせ内容: f.body
+            })
+          });
+          if (!res.ok) throw new Error('send failed');
         }
         renderVals() {
           return {
             sent: this.state.sent,
             notSent: !this.state.sent,
+            sending: this.state.sending,
+            error: this.state.error,
+            hasError: !!this.state.error,
             f: this.state.f,
             topics: ['足場工事一式', '外壁塗装', '屋根工事', '防水工事', '各種リフォーム', 'その他のご相談'],
             setName: this.set('name'),
@@ -2493,8 +2698,18 @@
             setEmail: this.set('email'),
             setTopic: this.set('topic'),
             setBody: this.set('body'),
-            setAgree: this.set('agree'),
-            onSubmit: e => { e.preventDefault(); this.setState({ sent: true }); }
+            onSubmit: async e => {
+              e.preventDefault();
+              if (this.state.sending) return;
+              if (!FORM_ENDPOINT) { this.setState({ sent: true }); return; }
+              this.setState({ sending: true, error: '' });
+              try {
+                await this.send();
+                this.setState({ sent: true, sending: false });
+              } catch (err) {
+                this.setState({ sending: false, error: '送信に失敗しました。時間をおいて再度お試しいただくか、お電話にてご連絡ください。' });
+              }
+            }
           };
         }
       }
@@ -2538,7 +2753,7 @@
       class="lightbox"
       id="pic-1"
       role="dialog"
-      aria-label="施工事例の写真 1"
+      aria-label="施工現場の写真 1"
     >
       <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
       <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
@@ -2550,7 +2765,7 @@
       class="lightbox"
       id="pic-2"
       role="dialog"
-      aria-label="施工事例の写真 2"
+      aria-label="施工現場の写真 2"
     >
       <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
       <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
@@ -2562,7 +2777,7 @@
       class="lightbox"
       id="pic-4"
       role="dialog"
-      aria-label="施工事例の写真 3"
+      aria-label="施工現場の写真 3"
     >
       <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
       <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
@@ -2574,7 +2789,7 @@
       class="lightbox"
       id="pic-5"
       role="dialog"
-      aria-label="施工事例の写真 4"
+      aria-label="施工現場の写真 4"
     >
       <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
       <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
@@ -2586,7 +2801,7 @@
       class="lightbox"
       id="pic-6"
       role="dialog"
-      aria-label="施工事例の写真 5"
+      aria-label="施工現場の写真 5"
     >
       <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
       <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
@@ -2598,7 +2813,7 @@
       class="lightbox"
       id="pic-7"
       role="dialog"
-      aria-label="施工事例の写真 6"
+      aria-label="施工現場の写真 6"
     >
       <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
       <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
@@ -2610,7 +2825,7 @@
       class="lightbox"
       id="pic-8"
       role="dialog"
-      aria-label="施工事例の写真 7"
+      aria-label="施工現場の写真 7"
     >
       <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
       <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
@@ -2622,7 +2837,7 @@
       class="lightbox"
       id="pic-9"
       role="dialog"
-      aria-label="施工事例の写真 8"
+      aria-label="施工現場の写真 8"
     >
       <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
       <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
