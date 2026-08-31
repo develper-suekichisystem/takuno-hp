@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>株式会社 拓乃 ｜ 足場工事・外壁塗装・屋根・防水・リフォーム（愛知県知多郡東浦町）</title>
+    <title>
+      株式会社 拓乃 ｜
+      足場工事・外壁塗装・屋根・防水・リフォーム（愛知県知多郡東浦町）
+    </title>
     <meta
       name="description"
       content="株式会社 拓乃は愛知県知多郡東浦町の足場工事会社です。足場の組立・解体から外壁塗装、屋根工事、防水工事、各種リフォームまで、各専門業者と連携し窓口ひとつで対応します。"
@@ -11,10 +14,7 @@
     <link rel="icon" href="assets/logo-vertical.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="株式会社 拓乃" />
-    <meta
-      property="og:title"
-      content="株式会社 拓乃 ｜ 足元から未来を支える"
-    />
+    <meta property="og:title" content="株式会社 拓乃 ｜ 足元から未来を支える" />
     <meta
       property="og:description"
       content="愛知県知多郡東浦町の足場工事会社。足場の組立・解体から外壁塗装、屋根、防水、リフォームまで一括対応します。"
@@ -29,7 +29,7 @@
       <img src="assets/logo-vertical.png" alt="" />
       <span class="spinner"></span>
     </div>
-    
+
     <x-dc>
       <helmet>
         <link
@@ -128,7 +128,8 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+            transition:
+              transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
               opacity 0.4s ease;
           }
           .work-thumb:hover img,
@@ -137,7 +138,7 @@
             opacity: 0.85;
           }
           .work-thumb::after {
-            content: "＋";
+            content: '＋';
             position: absolute;
             right: 10px;
             bottom: 10px;
@@ -152,7 +153,9 @@
             font-size: 15px;
             opacity: 0;
             transform: translateY(6px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition:
+              opacity 0.3s ease,
+              transform 0.3s ease;
           }
           .work-thumb:hover::after,
           .work-thumb:focus-visible::after {
@@ -171,7 +174,9 @@
             padding: 24px;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.25s ease, visibility 0.25s;
+            transition:
+              opacity 0.25s ease,
+              visibility 0.25s;
           }
           .lightbox:target {
             opacity: 1;
@@ -272,9 +277,13 @@
                 view-timeline-name: --contactTL;
               }
               .cta-bar {
-                animation: ctaRise linear both, ctaSink linear both;
+                animation:
+                  ctaRise linear both,
+                  ctaSink linear both;
                 animation-timeline: --heroTL, --contactTL;
-                animation-range: exit 55% exit 95%, entry 0% entry 35%;
+                animation-range:
+                  exit 55% exit 95%,
+                  entry 0% entry 35%;
               }
               @keyframes ctaRise {
                 from {
@@ -308,7 +317,8 @@
             font-size: clamp(14px, 1.7vw, 15px);
             letter-spacing: 0.08em;
             text-decoration: none;
-            transition: background 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
+            transition:
+              background 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
               color 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
           }
           .btn-outline:hover {
@@ -397,7 +407,7 @@
           }
           /* 右上の折り返し */
           .letter::before {
-            content: "";
+            content: '';
             position: absolute;
             top: 0;
             right: 0;
@@ -409,7 +419,7 @@
           }
           /* 左下の折り返し */
           .letter::after {
-            content: "";
+            content: '';
             position: absolute;
             bottom: 0;
             left: 0;
@@ -447,7 +457,7 @@
           .letter-sign {
             margin-top: clamp(6px, 1.6vw, 14px);
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: flex-end;
             gap: 16px;
           }
@@ -458,7 +468,8 @@
             gap: 6px;
           }
           .letter-sign-name span {
-            font-size: 11px;
+            font-family: var(--font-mincho, 'Noto Serif JP', serif);
+            font-size: 12px;
             letter-spacing: 0.12em;
             color: #6b7480;
           }
@@ -469,15 +480,6 @@
             letter-spacing: 0.08em;
             color: #062242;
           }
-          .letter-sign img {
-            width: clamp(52px, 8vw, 64px);
-            height: clamp(52px, 8vw, 64px);
-            border-radius: 999px;
-            object-fit: cover;
-            object-position: 50% 20%;
-            display: block;
-            border: 1px solid rgba(6, 34, 66, 0.12);
-          }
           /* --- main service card --- */
           .svc-main {
             background: #fff;
@@ -486,8 +488,8 @@
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(150px, 220px);
             grid-template-areas:
-              "body fig"
-              "btn  fig";
+              'body fig'
+              'btn  fig';
             align-items: center;
             column-gap: clamp(24px, 4vw, 56px);
             row-gap: clamp(20px, 3vw, 28px);
@@ -512,9 +514,9 @@
             .svc-main {
               grid-template-columns: minmax(0, 1fr);
               grid-template-areas:
-                "body"
-                "fig"
-                "btn";
+                'body'
+                'fig'
+                'btn';
             }
             .svc-main-fig {
               padding: clamp(4px, 2vw, 12px) 0;
@@ -532,7 +534,7 @@
             line-height: var(--lh);
           }
           .letter .letter-p::before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             right: 0;
@@ -556,6 +558,78 @@
               #000 0 5px,
               transparent 5px 11px
             );
+          }
+          /* --- 署名の顔写真（切り抜き風） --- */
+          .letter-sign img {
+            width: clamp(96px, 17vw, 132px);
+            height: auto;
+            display: block;
+            align-self: flex-end;
+            margin-bottom: -8px;
+            mix-blend-mode: multiply;
+            filter: brightness(1.2) contrast(1.06) saturate(0.96);
+            pointer-events: none;
+            user-select: none;
+          }
+          .letter > p,
+          .letter > .letter-sign {
+            position: relative;
+            z-index: 1;
+          }
+          /* --- works: スマホは折りたたみ --- */
+          .works-toggle {
+            display: none;
+          }
+          .works-more {
+            display: none;
+          }
+          @media (max-width: 860px) {
+            .works-grid > .work-thumb:nth-child(n + 5) {
+              display: none;
+            }
+            .works-toggle:checked ~ .works-grid > .work-thumb {
+              display: block;
+            }
+            .works-more {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              margin-top: 16px;
+              min-height: 52px;
+              border: 1px solid #062242;
+              border-radius: 999px;
+              color: #062242;
+              font-size: 14px;
+              letter-spacing: 0.1em;
+              cursor: pointer;
+              user-select: none;
+            }
+            .works-more .works-more-open,
+            .works-more .works-more-close {
+              display: inline-flex;
+              align-items: center;
+            }
+            .works-more .chev {
+              width: 9px;
+              height: 9px;
+              margin-left: 12px;
+              border-right: 1.6px solid currentColor;
+              border-bottom: 1.6px solid currentColor;
+              transform: translateY(-3px) rotate(45deg);
+            }
+            .works-more .chev.is-up {
+              transform: translateY(2px) rotate(-135deg);
+            }
+            .works-more .works-more-close {
+              display: none;
+            }
+            .works-toggle:checked ~ .works-more .works-more-open {
+              display: none;
+            }
+            .works-toggle:checked ~ .works-more .works-more-close {
+              display: inline-flex;
+            }
           }
           /* --- hero --- */
           .hero-img {
@@ -603,6 +677,8 @@
           .hero-copy {
             display: flex;
             flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
             gap: clamp(16px, 2.4vw, 28px);
           }
           @media (max-width: 860px) {
@@ -619,12 +695,30 @@
             }
             .hero-scrim-y {
               background: linear-gradient(
-                to top,
+                to bottom,
                 rgba(255, 255, 255, 0.94) 0%,
                 rgba(255, 255, 255, 0.86) 28%,
                 rgba(255, 255, 255, 0.6) 50%,
                 rgba(255, 255, 255, 0) 78%
               ) !important;
+            }
+          }
+          @media (max-width: 860px) {
+            .hero-actions {
+              flex-direction: column;
+              align-items: flex-end;
+              align-self: flex-end;
+              width: auto;
+              max-width: 74%;
+            }
+            .hero-actions {
+              display: grid;
+              grid-template-columns: max-content;
+              justify-content: end;
+            }
+            .hero-actions > a {
+              justify-content: center;
+              width: 100%;
             }
           }
           /* --- header nav --- */
@@ -640,7 +734,8 @@
             border: 1px solid #062242;
             border-radius: 999px;
             color: #062242;
-            transition: background 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+            transition:
+              background 200ms cubic-bezier(0.22, 0.61, 0.36, 1),
               color 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
           }
           .nav-link.is-cta:hover {
@@ -896,9 +991,9 @@
               inset: 0;
               background: linear-gradient(
                 180deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0) 35%,
-                rgba(255, 255, 255, 0.45) 100%
+                rgba(255, 255, 255, 0.5) 0%,
+                rgba(255, 255, 255, 0.28) 30%,
+                rgba(255, 255, 255, 0) 62%
               );
             "
             class="hero-scrim-y"
@@ -908,7 +1003,7 @@
               position: absolute;
               inset: 0;
               background: linear-gradient(
-                90deg,
+                270deg,
                 rgba(255, 255, 255, 0.9) 0%,
                 rgba(255, 255, 255, 0.5) 40%,
                 rgba(255, 255, 255, 0) 66%
@@ -922,10 +1017,10 @@
               max-width: 1120px;
               width: 100%;
               margin: 0 auto;
-              padding: clamp(72px, 10vw, 120px) 20px clamp(88px, 13vh, 150px);
+              padding: clamp(104px, 15vh, 170px) 20px clamp(72px, 10vw, 120px);
               display: flex;
               flex-direction: column;
-              justify-content: flex-end;
+              justify-content: flex-start;
               gap: clamp(16px, 2.4vw, 28px);
             "
           >
@@ -954,6 +1049,7 @@
                 確かな技術と信頼で、安心・安全な足場を。
               </p>
               <div
+                class="hero-actions"
                 style="
                   display: flex;
                   flex-wrap: wrap;
@@ -1161,7 +1257,9 @@
                 "
               >
                 <div style="display: flex; align-items: center; gap: 16px">
-                  <span style="flex: 1; height: 1px; background: #c2ccd9"></span>
+                  <span
+                    style="flex: 1; height: 1px; background: #c2ccd9"
+                  ></span>
                   <h4
                     style="
                       margin: 0;
@@ -1174,7 +1272,9 @@
                   >
                     その他の工事もご相談ください
                   </h4>
-                  <span style="flex: 1; height: 1px; background: #c2ccd9"></span>
+                  <span
+                    style="flex: 1; height: 1px; background: #c2ccd9"
+                  ></span>
                 </div>
                 <p
                   style="
@@ -1197,192 +1297,233 @@
                   "
                 >
                   <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 14px;
-                  "
-                >
-                  <span
                     style="
-                      width: clamp(72px, 11vw, 88px);
-                      height: clamp(72px, 11vw, 88px);
-                      border-radius: 999px;
-                      background: #e7eef7;
                       display: flex;
+                      flex-direction: column;
                       align-items: center;
-                      justify-content: center;
+                      gap: 14px;
                     "
                   >
-                    <svg
-                      width="42"
-                      height="42"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                      stroke="#062242"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
+                    <span
+                      style="
+                        width: clamp(72px, 11vw, 88px);
+                        height: clamp(72px, 11vw, 88px);
+                        border-radius: 999px;
+                        background: #e7eef7;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
                     >
-                      <rect x="20" y="8" width="20" height="9" rx="1.5"></rect>
-                      <path d="M20 12.5h-6v7h-3"></path>
-                      <rect x="7.5" y="19.5" width="7" height="6" rx="1"></rect>
-                      <path d="M11 25.5V40"></path>
-                      <path d="M24 21v18M30 21v18M36 21v18" stroke-width="1.1" opacity=".45"></path>
-                    </svg>
-                  </span>
-                  <span
+                      <svg
+                        width="42"
+                        height="42"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        stroke="#062242"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="20"
+                          y="8"
+                          width="20"
+                          height="9"
+                          rx="1.5"
+                        ></rect>
+                        <path d="M20 12.5h-6v7h-3"></path>
+                        <rect
+                          x="7.5"
+                          y="19.5"
+                          width="7"
+                          height="6"
+                          rx="1"
+                        ></rect>
+                        <path d="M11 25.5V40"></path>
+                        <path
+                          d="M24 21v18M30 21v18M36 21v18"
+                          stroke-width="1.1"
+                          opacity=".45"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span
+                      style="
+                        font-size: 13px;
+                        letter-spacing: 0.06em;
+                        color: #062242;
+                        white-space: nowrap;
+                      "
+                      >外壁塗装</span
+                    >
+                  </div>
+                  <div
                     style="
-                      font-size: 13px;
-                      letter-spacing: 0.06em;
-                      color: #062242;
-                      white-space: nowrap;
-                    "
-                    >外壁塗装</span
-                  >
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 14px;
-                  "
-                >
-                  <span
-                    style="
-                      width: clamp(72px, 11vw, 88px);
-                      height: clamp(72px, 11vw, 88px);
-                      border-radius: 999px;
-                      background: #e7eef7;
                       display: flex;
+                      flex-direction: column;
                       align-items: center;
-                      justify-content: center;
+                      gap: 14px;
                     "
                   >
-                    <svg
-                      width="42"
-                      height="42"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                      stroke="#062242"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
+                    <span
+                      style="
+                        width: clamp(72px, 11vw, 88px);
+                        height: clamp(72px, 11vw, 88px);
+                        border-radius: 999px;
+                        background: #e7eef7;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
                     >
-                      <path d="M6 27 24 12l18 15"></path>
-                      <path d="M24 12v-4"></path>
-                      <path d="M11 31 24 20l13 11" stroke-width="1.1" opacity=".5"></path>
-                      <path d="M16 35 24 28l8 7" stroke-width="1.1" opacity=".5"></path>
-                      <path d="M8 40h32"></path>
-                    </svg>
-                  </span>
-                  <span
+                      <svg
+                        width="42"
+                        height="42"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        stroke="#062242"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 27 24 12l18 15"></path>
+                        <path d="M24 12v-4"></path>
+                        <path
+                          d="M11 31 24 20l13 11"
+                          stroke-width="1.1"
+                          opacity=".5"
+                        ></path>
+                        <path
+                          d="M16 35 24 28l8 7"
+                          stroke-width="1.1"
+                          opacity=".5"
+                        ></path>
+                        <path d="M8 40h32"></path>
+                      </svg>
+                    </span>
+                    <span
+                      style="
+                        font-size: 13px;
+                        letter-spacing: 0.06em;
+                        color: #062242;
+                        white-space: nowrap;
+                      "
+                      >屋根工事</span
+                    >
+                  </div>
+                  <div
                     style="
-                      font-size: 13px;
-                      letter-spacing: 0.06em;
-                      color: #062242;
-                      white-space: nowrap;
-                    "
-                    >屋根工事</span
-                  >
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 14px;
-                  "
-                >
-                  <span
-                    style="
-                      width: clamp(72px, 11vw, 88px);
-                      height: clamp(72px, 11vw, 88px);
-                      border-radius: 999px;
-                      background: #e7eef7;
                       display: flex;
+                      flex-direction: column;
                       align-items: center;
-                      justify-content: center;
+                      gap: 14px;
                     "
                   >
-                    <svg
-                      width="42"
-                      height="42"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                      stroke="#062242"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
+                    <span
+                      style="
+                        width: clamp(72px, 11vw, 88px);
+                        height: clamp(72px, 11vw, 88px);
+                        border-radius: 999px;
+                        background: #e7eef7;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
                     >
-                      <path d="M24 8c0 0 9 10.5 9 16.5A9 9 0 0 1 15 24.5C15 18.5 24 8 24 8Z"></path>
-                      <path d="M21 22.5c0 3 1.6 4.8 4 5.2" stroke-width="1.1" opacity=".5"></path>
-                      <path d="M7 36c3.4 0 3.4-3 6.8-3s3.4 3 6.8 3 3.4-3 6.8-3 3.4 3 6.8 3 3.4-3 6.8-3"></path>
-                      <path d="M7 42c3.4 0 3.4-3 6.8-3s3.4 3 6.8 3 3.4-3 6.8-3 3.4 3 6.8 3 3.4-3 6.8-3" stroke-width="1.1" opacity=".45"></path>
-                    </svg>
-                  </span>
-                  <span
+                      <svg
+                        width="42"
+                        height="42"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        stroke="#062242"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M24 8c0 0 9 10.5 9 16.5A9 9 0 0 1 15 24.5C15 18.5 24 8 24 8Z"
+                        ></path>
+                        <path
+                          d="M21 22.5c0 3 1.6 4.8 4 5.2"
+                          stroke-width="1.1"
+                          opacity=".5"
+                        ></path>
+                        <path
+                          d="M7 36c3.4 0 3.4-3 6.8-3s3.4 3 6.8 3 3.4-3 6.8-3 3.4 3 6.8 3 3.4-3 6.8-3"
+                        ></path>
+                        <path
+                          d="M7 42c3.4 0 3.4-3 6.8-3s3.4 3 6.8 3 3.4-3 6.8-3 3.4 3 6.8 3 3.4-3 6.8-3"
+                          stroke-width="1.1"
+                          opacity=".45"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span
+                      style="
+                        font-size: 13px;
+                        letter-spacing: 0.06em;
+                        color: #062242;
+                        white-space: nowrap;
+                      "
+                      >防水工事</span
+                    >
+                  </div>
+                  <div
                     style="
-                      font-size: 13px;
-                      letter-spacing: 0.06em;
-                      color: #062242;
-                      white-space: nowrap;
-                    "
-                    >防水工事</span
-                  >
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 14px;
-                  "
-                >
-                  <span
-                    style="
-                      width: clamp(72px, 11vw, 88px);
-                      height: clamp(72px, 11vw, 88px);
-                      border-radius: 999px;
-                      background: #e7eef7;
                       display: flex;
+                      flex-direction: column;
                       align-items: center;
-                      justify-content: center;
+                      gap: 14px;
                     "
                   >
-                    <svg
-                      width="42"
-                      height="42"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                      stroke="#062242"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
+                    <span
+                      style="
+                        width: clamp(72px, 11vw, 88px);
+                        height: clamp(72px, 11vw, 88px);
+                        border-radius: 999px;
+                        background: #e7eef7;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
                     >
-                      <path d="M8.5 25 23 13.5 37.5 25"></path>
-                      <path d="M12.5 22.5V39h21V22.5"></path>
-                      <path d="M19 39v-8h8v8" stroke-width="1.1" opacity=".5"></path>
-                      <path d="M39 7.5c0 4 1.5 5.5 5.5 5.5-4 0-5.5 1.5-5.5 5.5 0-4-1.5-5.5-5.5-5.5 4 0 5.5-1.5 5.5-5.5Z"></path>
-                    </svg>
-                  </span>
-                  <span
-                    style="
-                      font-size: 13px;
-                      letter-spacing: 0.06em;
-                      color: #062242;
-                      white-space: nowrap;
-                    "
-                    >各種リフォーム</span
-                  >
-                </div>
-                
+                      <svg
+                        width="42"
+                        height="42"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        stroke="#062242"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M8.5 25 23 13.5 37.5 25"></path>
+                        <path d="M12.5 22.5V39h21V22.5"></path>
+                        <path
+                          d="M19 39v-8h8v8"
+                          stroke-width="1.1"
+                          opacity=".5"
+                        ></path>
+                        <path
+                          d="M39 7.5c0 4 1.5 5.5 5.5 5.5-4 0-5.5 1.5-5.5 5.5 0-4-1.5-5.5-5.5-5.5 4 0 5.5-1.5 5.5-5.5Z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span
+                      style="
+                        font-size: 13px;
+                        letter-spacing: 0.06em;
+                        color: #062242;
+                        white-space: nowrap;
+                      "
+                      >各種リフォーム</span
+                    >
+                  </div>
                 </div>
                 <a href="#contact" class="btn-solid"
                   >お問い合わせはこちら<span>→</span></a
@@ -1438,32 +1579,32 @@
             <!-- 手紙（代表挨拶） -->
             <div class="letter-wrap">
               <article class="letter">
-              <p class="letter-lead">ご挨拶</p>
-              <p class="letter-p">
-                20年以上、現場に立ち続ける中で、私が大切にしてきたのは、一つひとつの仕事に、本気で向き合うことです。
-              </p>
-              <p class="letter-p">
-                足場は、ただ建物を囲うものではありません。その上で職人が仕事をし、建物が仕上がっていく。だからこそ、安全であることはもちろん、実際に使う職人の目線に立ち、使いやすさまで考え抜いた足場でなければならないと考えています。
-              </p>
-              <p class="letter-p">
-                現場では、業者様とのコミュニケーションを何より大切にしています。要望に対して丁寧に、そして迅速に応え、長くお付き合いいただいている協力会社様とも、仕事だからこそ誠実に向き合い、信頼を積み重ねていく。それが、良い現場をつくるために欠かせないことだと思っています。
-              </p>
-              <p class="letter-quote">『足元から未来を支える。』</p>
-              <p class="letter-p">
-                これからも現場に立つ一人ひとりの仕事を支え、その先にある建物と、そこで暮らす人・働く人の未来まで支えられる仕事を続けていきます。
-              </p>
-              <div class="letter-sign">
-                <div class="letter-sign-name">
-                  <span>株式会社 拓乃　代表取締役</span>
-                  <strong>岡田 拓磨</strong>
-                </div>
+                <p class="letter-lead">ご挨拶</p>
+                <p class="letter-p">
+                  20年以上、現場に立ち続ける中で、私が大切にしてきたのは、一つひとつの仕事に、本気で向き合うことです。
+                </p>
+                <p class="letter-p">
+                  足場は、ただ建物を囲うものではありません。その上で職人が仕事をし、建物が仕上がっていく。だからこそ、安全であることはもちろん、実際に使う職人の目線に立ち、使いやすさまで考え抜いた足場でなければならないと考えています。
+                </p>
+                <p class="letter-p">
+                  現場では、業者様とのコミュニケーションを何より大切にしています。要望に対して丁寧に、そして迅速に応え、長くお付き合いいただいている協力会社様とも、仕事だからこそ誠実に向き合い、信頼を積み重ねていく。それが、良い現場をつくるために欠かせないことだと思っています。
+                </p>
+                <p class="letter-quote">『足元から未来を支える。』</p>
+                <p class="letter-p">
+                  これからも現場に立つ一人ひとりの仕事を支え、その先にある建物と、そこで暮らす人・働く人の未来まで支えられる仕事を続けていきます。
+                </p>
+                <div class="letter-sign">
+                  <div class="letter-sign-name">
+                    <span>株式会社 拓乃　代表取締役</span>
+                    <strong>岡田 拓磨</strong>
+                  </div>
                 <img
                   src="assets/face.jpg"
                   alt="代表取締役 岡田 拓磨"
                   loading="lazy"
                 />
-              </div>
-            </article>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -1496,7 +1637,14 @@
               </h2>
               <span style="flex: 1; height: 1px; background: #c2ccd9"></span>
             </div>
+            <input
+              type="checkbox"
+              id="worksToggle"
+              class="works-toggle"
+              aria-hidden="true"
+            />
             <div
+              class="works-grid"
               style="
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -1513,19 +1661,69 @@
               </a>
               <a
                 class="work-thumb"
-                href="#pic-3"
+                href="#pic-2"
                 aria-label="施工事例の写真 2 を拡大"
+              >
+                <img src="assets/example2.jpg" alt="" loading="lazy" />
+              </a>
+              <a
+                class="work-thumb"
+                href="#pic-3"
+                aria-label="施工事例の写真 3 を拡大"
               >
                 <img src="assets/example3.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-4"
-                aria-label="施工事例の写真 3 を拡大"
+                aria-label="施工事例の写真 4 を拡大"
               >
                 <img src="assets/example4.jpg" alt="" loading="lazy" />
               </a>
-              </div>
+              <a
+                class="work-thumb"
+                href="#pic-5"
+                aria-label="施工事例の写真 5 を拡大"
+              >
+                <img src="assets/example5.jpg" alt="" loading="lazy" />
+              </a>
+              <a
+                class="work-thumb"
+                href="#pic-6"
+                aria-label="施工事例の写真 6 を拡大"
+              >
+                <img src="assets/example6.jpg" alt="" loading="lazy" />
+              </a>
+              <a
+                class="work-thumb"
+                href="#pic-7"
+                aria-label="施工事例の写真 7 を拡大"
+              >
+                <img src="assets/example7.jpg" alt="" loading="lazy" />
+              </a>
+              <a
+                class="work-thumb"
+                href="#pic-8"
+                aria-label="施工事例の写真 8 を拡大"
+              >
+                <img src="assets/example8.jpg" alt="" loading="lazy" />
+              </a>
+              <a
+                class="work-thumb"
+                href="#pic-9"
+                aria-label="施工事例の写真 9 を拡大"
+              >
+                <img src="assets/example9.jpg" alt="" loading="lazy" />
+              </a>
+            </div>
+            <label for="worksToggle" class="works-more">
+              <span class="works-more-open"
+                >もっと見る<i class="chev"></i
+              ></span>
+              <span class="works-more-close"
+                >閉じる<i class="chev is-up"></i
+              ></span>
+            </label>
           </div>
         </section>
 
@@ -1574,7 +1772,7 @@
                   color: #354a5e;
                 "
               >
-                愛知県知多郡東浦町に事務所を構え、知多半島から名古屋市周辺まで対応しております。
+                愛知県知多郡東浦町に事務所を構え、知多半島から、東海3県まで幅広く対応しております。
               </p>
             </div>
             <div
@@ -2341,30 +2539,117 @@
         >お問い合わせ</a
       >
     </nav>
-  <div class="cta-bar" id="ctaBar">
-  <a class="tel" href="#tel"><span>☎</span>お電話はこちら</a>
-  <a class="form" href="#contact">お問い合わせ<span>→</span></a>
-</div>
-<div class="lightbox" id="pic-1" role="dialog" aria-label="施工事例の写真 1">
-  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
-  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
-  <a class="lb-btn lb-prev" href="#pic-4" aria-label="前の写真">‹</a>
-  <img src="assets/example1.jpg" alt="" />
-  <a class="lb-btn lb-next" href="#pic-3" aria-label="次の写真">›</a>
-</div>
-<div class="lightbox" id="pic-3" role="dialog" aria-label="施工事例の写真 2">
-  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
-  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
-  <a class="lb-btn lb-prev" href="#pic-1" aria-label="前の写真">‹</a>
-  <img src="assets/example3.jpg" alt="" />
-  <a class="lb-btn lb-next" href="#pic-4" aria-label="次の写真">›</a>
-</div>
-<div class="lightbox" id="pic-4" role="dialog" aria-label="施工事例の写真 3">
-  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
-  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
-  <a class="lb-btn lb-prev" href="#pic-3" aria-label="前の写真">‹</a>
-  <img src="assets/example4.jpg" alt="" />
-  <a class="lb-btn lb-next" href="#pic-1" aria-label="次の写真">›</a>
-</div>
-</body>
+    <div class="cta-bar" id="ctaBar">
+      <a class="tel" href="#tel"><span>☎</span>お電話はこちら</a>
+      <a class="form" href="#contact">お問い合わせ<span>→</span></a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-1"
+      role="dialog"
+      aria-label="施工事例の写真 1"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-9" aria-label="前の写真">‹</a>
+      <img src="assets/example1.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-2" aria-label="次の写真">›</a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-2"
+      role="dialog"
+      aria-label="施工事例の写真 2"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-1" aria-label="前の写真">‹</a>
+      <img src="assets/example2.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-3" aria-label="次の写真">›</a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-3"
+      role="dialog"
+      aria-label="施工事例の写真 3"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-2" aria-label="前の写真">‹</a>
+      <img src="assets/example3.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-4" aria-label="次の写真">›</a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-4"
+      role="dialog"
+      aria-label="施工事例の写真 4"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-3" aria-label="前の写真">‹</a>
+      <img src="assets/example4.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-5" aria-label="次の写真">›</a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-5"
+      role="dialog"
+      aria-label="施工事例の写真 5"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-4" aria-label="前の写真">‹</a>
+      <img src="assets/example5.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-6" aria-label="次の写真">›</a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-6"
+      role="dialog"
+      aria-label="施工事例の写真 6"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-5" aria-label="前の写真">‹</a>
+      <img src="assets/example6.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-7" aria-label="次の写真">›</a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-7"
+      role="dialog"
+      aria-label="施工事例の写真 7"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-6" aria-label="前の写真">‹</a>
+      <img src="assets/example7.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-8" aria-label="次の写真">›</a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-8"
+      role="dialog"
+      aria-label="施工事例の写真 8"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-7" aria-label="前の写真">‹</a>
+      <img src="assets/example8.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-9" aria-label="次の写真">›</a>
+    </div>
+    <div
+      class="lightbox"
+      id="pic-9"
+      role="dialog"
+      aria-label="施工事例の写真 9"
+    >
+      <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+      <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+      <a class="lb-btn lb-prev" href="#pic-8" aria-label="前の写真">‹</a>
+      <img src="assets/example9.jpg" alt="" />
+      <a class="lb-btn lb-next" href="#pic-1" aria-label="次の写真">›</a>
+    </div>
+  </body>
 </html>
