@@ -19,12 +19,17 @@
       property="og:description"
       content="愛知県知多郡東浦町の足場工事会社。足場の組立・解体から外壁塗装、屋根、防水、リフォームまで一括対応します。"
     />
-    <meta property="og:image" content="assets/photo-hero-scaffold-sunset.jpeg" />
+    <meta property="og:image" content="assets/top.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#062242" />
     <script src="./support.js"></script>
   </head>
   <body>
+    <div class="preloader" aria-hidden="true">
+      <img src="assets/logo-vertical.png" alt="" />
+      <span class="spinner"></span>
+    </div>
+    
     <x-dc>
       <helmet>
         <link
@@ -291,6 +296,267 @@
               }
             }
           }
+          /* --- service buttons --- */
+          .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            border: 1px solid #062242;
+            border-radius: 999px;
+            color: #062242;
+            font-size: clamp(14px, 1.7vw, 15px);
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: background 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              color 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+          }
+          .btn-outline:hover {
+            background: #062242;
+            color: #fff;
+          }
+          .btn-solid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 24px;
+            background: #062242;
+            color: #fff;
+            font-size: clamp(15px, 2vw, 16px);
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: background 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+          }
+          .btn-solid:hover {
+            background: #034683;
+            color: #fff;
+          }
+          /* --- preloader --- */
+          .preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(26px, 4vw, 36px);
+            background: #f4f4f5;
+            animation: preloaderOut 0.55s ease 1.25s forwards;
+          }
+          @keyframes preloaderOut {
+            to {
+              opacity: 0;
+              visibility: hidden;
+            }
+          }
+          .preloader img {
+            width: min(210px, 48vw);
+            height: auto;
+            display: block;
+          }
+          .preloader .spinner {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            border: 2px solid rgba(6, 34, 66, 0.16);
+            border-top-color: #062242;
+            animation: preloaderSpin 0.8s linear infinite;
+          }
+          @keyframes preloaderSpin {
+            to {
+              transform: rotate(1turn);
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .preloader .spinner {
+              animation: none;
+            }
+          }
+          /* --- letter (代表挨拶) --- */
+          .letter-wrap {
+            filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.32));
+          }
+          .letter {
+            --fold: clamp(24px, 5vw, 40px);
+            background: #fbfaf6;
+            padding: clamp(28px, 5.5vw, 64px) clamp(22px, 5vw, 60px);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(16px, 2.2vw, 22px);
+            position: relative;
+            clip-path: polygon(
+              0 0,
+              calc(100% - var(--fold)) 0,
+              100% var(--fold),
+              100% 100%,
+              var(--fold) 100%,
+              0 calc(100% - var(--fold))
+            );
+          }
+          /* 右上の折り返し */
+          .letter::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: var(--fold);
+            height: var(--fold);
+            background: linear-gradient(225deg, #ebe8dd, #f7f5ef);
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+            border-left: 1px solid rgba(6, 34, 66, 0.08);
+          }
+          /* 左下の折り返し */
+          .letter::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: var(--fold);
+            height: var(--fold);
+            background: linear-gradient(45deg, #ebe8dd, #f7f5ef);
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            border-right: 1px solid rgba(6, 34, 66, 0.08);
+          }
+          .letter p {
+            margin: 0;
+            font-family: var(--font-mincho, 'Noto Serif JP', serif);
+            font-size: clamp(13.5px, 1.65vw, 15px);
+            line-height: 2.15;
+            letter-spacing: 0.03em;
+            color: #3b4654;
+            text-wrap: pretty;
+          }
+          .letter .letter-lead {
+            font-size: clamp(15px, 2vw, 17px);
+            letter-spacing: 0.14em;
+            color: #062242;
+          }
+          .letter .letter-quote {
+            margin: clamp(6px, 1.2vw, 10px) 0;
+            padding: clamp(18px, 3vw, 26px) 0;
+            border-top: 1px solid rgba(6, 34, 66, 0.14);
+            border-bottom: 1px solid rgba(6, 34, 66, 0.14);
+            text-align: center;
+            font-size: clamp(18px, 3vw, 24px);
+            line-height: 1.6;
+            letter-spacing: 0.1em;
+            color: #062242;
+          }
+          .letter-sign {
+            margin-top: clamp(6px, 1.6vw, 14px);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 16px;
+          }
+          .letter-sign-name {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+          }
+          .letter-sign-name span {
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            color: #6b7480;
+          }
+          .letter-sign-name strong {
+            font-family: var(--font-mincho, 'Noto Serif JP', serif);
+            font-size: clamp(17px, 2.2vw, 20px);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: #062242;
+          }
+          .letter-sign img {
+            width: clamp(52px, 8vw, 64px);
+            height: clamp(52px, 8vw, 64px);
+            border-radius: 999px;
+            object-fit: cover;
+            object-position: 50% 20%;
+            display: block;
+            border: 1px solid rgba(6, 34, 66, 0.12);
+          }
+          /* --- main service card --- */
+          .svc-main {
+            background: #fff;
+            padding: clamp(28px, 4.5vw, 52px);
+            box-shadow: 0 2px 16px rgba(0, 24, 62, 0.07);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(150px, 220px);
+            grid-template-areas:
+              "body fig"
+              "btn  fig";
+            align-items: center;
+            column-gap: clamp(24px, 4vw, 56px);
+            row-gap: clamp(20px, 3vw, 28px);
+          }
+          .svc-main-body {
+            grid-area: body;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+          }
+          .svc-main-fig {
+            grid-area: fig;
+            display: flex;
+            justify-content: center;
+          }
+          .svc-main-btn {
+            grid-area: btn;
+            justify-self: start;
+            align-self: start;
+          }
+          @media (max-width: 860px) {
+            .svc-main {
+              grid-template-columns: minmax(0, 1fr);
+              grid-template-areas:
+                "body"
+                "fig"
+                "btn";
+            }
+            .svc-main-fig {
+              padding: clamp(4px, 2vw, 12px) 0;
+            }
+            .svc-main-btn {
+              justify-self: stretch;
+              justify-content: center;
+            }
+          }
+          .letter {
+            --lh: clamp(28px, 4.4vw, 32px);
+          }
+          .letter .letter-p {
+            position: relative;
+            line-height: var(--lh);
+          }
+          .letter .letter-p::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 100%;
+            pointer-events: none;
+            background-image: repeating-linear-gradient(
+              to bottom,
+              transparent 0,
+              transparent calc(var(--lh) - 1px),
+              rgba(6, 34, 66, 0.09) calc(var(--lh) - 1px),
+              rgba(6, 34, 66, 0.09) var(--lh)
+            );
+            -webkit-mask-image: repeating-linear-gradient(
+              to right,
+              #000 0 5px,
+              transparent 5px 11px
+            );
+            mask-image: repeating-linear-gradient(
+              to right,
+              #000 0 5px,
+              transparent 5px 11px
+            );
+          }
           /* --- hero --- */
           .hero-img {
             transform: scale(1.06);
@@ -340,6 +606,11 @@
             gap: clamp(16px, 2.4vw, 28px);
           }
           @media (max-width: 860px) {
+            /* スマホは少し左側を見せる */
+            .hero-img {
+              object-position: 32% 50%;
+              transform-origin: 32% 55%;
+            }
             .hero-copy {
               padding: 0;
             }
@@ -608,7 +879,7 @@
           "
         >
           <img
-            src="assets/photo-hero-scaffold-sunset.jpeg"
+            src="assets/top.jpg"
             alt=""
             class="hero-img"
             style="
@@ -824,86 +1095,129 @@
                 </h3>
                 <span style="flex: 1; height: 1px; background: #c2ccd9"></span>
               </div>
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-                  gap: 24px 16px;
-                  justify-items: center;
-                "
-              >
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 16px;
-                  "
-                >
-                  <span
+
+              <!-- 主力：足場工事一式 -->
+              <div class="svc-main">
+                <div class="svc-main-body">
+                  <h4
                     style="
-                      width: 96px;
-                      height: 96px;
-                      border-radius: 999px;
-                      background: #e7eef7;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      transition: background 240ms
-                        cubic-bezier(0.22, 0.61, 0.36, 1);
+                      margin: 0;
+                      font-family: var(--font-mincho, 'Noto Serif JP', serif);
+                      font-size: clamp(26px, 4.6vw, 38px);
+                      font-weight: 600;
+                      letter-spacing: 0.12em;
+                      line-height: 1.4;
+                      color: #062242;
                     "
                   >
-                    <svg
-                      width="46"
-                      height="46"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                      stroke="#062242"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M13 8v32M35 8v32"></path>
-                      <path d="M9 17h30M9 27h30M9 37h30"></path>
-                      <path d="M13 17 35 27M35 17 13 27" stroke-width="1.1" opacity=".55"></path>
-                      <path d="M8 41h32" stroke-width="1.1" opacity=".55"></path>
-                    </svg>
-                  </span>
-                  <span
+                    足場工事一式
+                  </h4>
+                  <p
                     style="
-                      font-size: 13px;
-                      letter-spacing: 0.06em;
+                      margin: 0;
+                      font-size: clamp(14px, 1.7vw, 15px);
+                      line-height: 1.95;
+                      color: #354a5e;
+                      text-wrap: pretty;
+                    "
+                  >
+                    私たちは、安全第一を徹底し、確実で高品質な足場工事を提供します。組立・解体から現場の安全管理まで、実際に使う職人の目線に立った、使いやすい足場をお届けします。
+                  </p>
+                </div>
+                <div class="svc-main-fig">
+                  <svg
+                    width="180"
+                    height="180"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    stroke="#062242"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    style="max-width: 100%; height: auto"
+                  >
+                    <path d="M13 8v32M35 8v32"></path>
+                    <path d="M9 17h30M9 27h30M9 37h30"></path>
+                    <path
+                      d="M13 17 35 27M35 17 13 27"
+                      stroke-width="1.1"
+                      opacity=".55"
+                    ></path>
+                    <path d="M8 41h32" stroke-width="1.1" opacity=".55"></path>
+                  </svg>
+                </div>
+                <a href="#contact" class="btn-outline svc-main-btn"
+                  >お問い合わせはこちら<span>→</span></a
+                >
+              </div>
+
+              <!-- その他の工事 -->
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: clamp(24px, 3.5vw, 34px);
+                "
+              >
+                <div style="display: flex; align-items: center; gap: 16px">
+                  <span style="flex: 1; height: 1px; background: #c2ccd9"></span>
+                  <h4
+                    style="
+                      margin: 0;
+                      font-size: clamp(15px, 2.2vw, 18px);
+                      font-weight: 600;
+                      letter-spacing: 0.08em;
                       color: #062242;
                       white-space: nowrap;
                     "
-                    >足場工事一式</span
                   >
+                    その他の工事もご相談ください
+                  </h4>
+                  <span style="flex: 1; height: 1px; background: #c2ccd9"></span>
                 </div>
+                <p
+                  style="
+                    margin: 0;
+                    text-align: center;
+                    font-size: clamp(13px, 1.6vw, 15px);
+                    line-height: 1.95;
+                    color: #354a5e;
+                    text-wrap: balance;
+                  "
+                >
+                  外壁塗装・屋根工事・防水工事・リフォームなど<br />幅広く対応いたします。
+                </p>
                 <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                    gap: 24px 12px;
+                    justify-items: center;
+                  "
+                >
+                  <div
                   style="
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 16px;
+                    gap: 14px;
                   "
                 >
                   <span
                     style="
-                      width: 96px;
-                      height: 96px;
+                      width: clamp(72px, 11vw, 88px);
+                      height: clamp(72px, 11vw, 88px);
                       border-radius: 999px;
                       background: #e7eef7;
                       display: flex;
                       align-items: center;
                       justify-content: center;
-                      transition: background 240ms
-                        cubic-bezier(0.22, 0.61, 0.36, 1);
                     "
                   >
                     <svg
-                      width="46"
-                      height="46"
+                      width="42"
+                      height="42"
                       viewBox="0 0 48 48"
                       fill="none"
                       stroke="#062242"
@@ -934,25 +1248,23 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 16px;
+                    gap: 14px;
                   "
                 >
                   <span
                     style="
-                      width: 96px;
-                      height: 96px;
+                      width: clamp(72px, 11vw, 88px);
+                      height: clamp(72px, 11vw, 88px);
                       border-radius: 999px;
                       background: #e7eef7;
                       display: flex;
                       align-items: center;
                       justify-content: center;
-                      transition: background 240ms
-                        cubic-bezier(0.22, 0.61, 0.36, 1);
                     "
                   >
                     <svg
-                      width="46"
-                      height="46"
+                      width="42"
+                      height="42"
                       viewBox="0 0 48 48"
                       fill="none"
                       stroke="#062242"
@@ -983,25 +1295,23 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 16px;
+                    gap: 14px;
                   "
                 >
                   <span
                     style="
-                      width: 96px;
-                      height: 96px;
+                      width: clamp(72px, 11vw, 88px);
+                      height: clamp(72px, 11vw, 88px);
                       border-radius: 999px;
                       background: #e7eef7;
                       display: flex;
                       align-items: center;
                       justify-content: center;
-                      transition: background 240ms
-                        cubic-bezier(0.22, 0.61, 0.36, 1);
                     "
                   >
                     <svg
-                      width="46"
-                      height="46"
+                      width="42"
+                      height="42"
                       viewBox="0 0 48 48"
                       fill="none"
                       stroke="#062242"
@@ -1031,25 +1341,23 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 16px;
+                    gap: 14px;
                   "
                 >
                   <span
                     style="
-                      width: 96px;
-                      height: 96px;
+                      width: clamp(72px, 11vw, 88px);
+                      height: clamp(72px, 11vw, 88px);
                       border-radius: 999px;
                       background: #e7eef7;
                       display: flex;
                       align-items: center;
                       justify-content: center;
-                      transition: background 240ms
-                        cubic-bezier(0.22, 0.61, 0.36, 1);
                     "
                   >
                     <svg
-                      width="46"
-                      height="46"
+                      width="42"
+                      height="42"
                       viewBox="0 0 48 48"
                       fill="none"
                       stroke="#062242"
@@ -1074,6 +1382,11 @@
                     >各種リフォーム</span
                   >
                 </div>
+                
+                </div>
+                <a href="#contact" class="btn-solid"
+                  >お問い合わせはこちら<span>→</span></a
+                >
               </div>
             </div>
           </div>
@@ -1084,123 +1397,73 @@
             style="
               max-width: 880px;
               margin: 0 auto;
-              padding: clamp(64px, 9vw, 120px) 20px;
+              padding: clamp(56px, 8vw, 104px) 20px;
+              display: flex;
+              flex-direction: column;
+              gap: clamp(28px, 4vw, 44px);
             "
           >
             <div
               style="
                 display: flex;
                 flex-direction: column;
-                gap: clamp(32px, 4.5vw, 48px);
+                align-items: center;
+                gap: 18px;
+                text-align: center;
               "
             >
-              <div
+              <span
                 style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 22px;
-                  text-align: center;
+                  font-size: 11px;
+                  letter-spacing: 0.28em;
+                  color: rgba(255, 255, 255, 0.6);
+                "
+                >PHILOSOPHY</span
+              >
+              <h2
+                style="
+                  margin: 0;
+                  font-family: var(--font-mincho, 'Noto Serif JP', serif);
+                  font-size: clamp(22px, 4vw, 32px);
+                  font-weight: 600;
+                  line-height: 1.5;
+                  letter-spacing: 0.08em;
+                  color: #fff;
                 "
               >
-                <span
-                  style="
-                    font-size: 11px;
-                    letter-spacing: 0.28em;
-                    color: rgba(255, 255, 255, 0.6);
-                  "
-                  >PHILOSOPHY</span
-                >
-                <h2
-                  style="
-                    margin: 0;
-                    font-family: var(--font-mincho, 'Noto Serif JP', serif);
-                    font-size: clamp(26px, 5vw, 40px);
-                    font-weight: 600;
-                    line-height: 1.45;
-                    letter-spacing: 0.08em;
-                    color: #fff;
-                  "
-                >
-                  未来を支える、私たちの仕事
-                </h2>
-                <span
-                  style="
-                    width: 48px;
-                    height: 1px;
-                    background: rgba(255, 255, 255, 0.35);
-                  "
-                ></span>
+                未来を支える、私たちの仕事
+              </h2>
+            </div>
+
+            <!-- 手紙（代表挨拶） -->
+            <div class="letter-wrap">
+              <article class="letter">
+              <p class="letter-lead">ご挨拶</p>
+              <p class="letter-p">
+                20年以上、現場に立ち続ける中で、私が大切にしてきたのは、一つひとつの仕事に、本気で向き合うことです。
+              </p>
+              <p class="letter-p">
+                足場は、ただ建物を囲うものではありません。その上で職人が仕事をし、建物が仕上がっていく。だからこそ、安全であることはもちろん、実際に使う職人の目線に立ち、使いやすさまで考え抜いた足場でなければならないと考えています。
+              </p>
+              <p class="letter-p">
+                現場では、業者様とのコミュニケーションを何より大切にしています。要望に対して丁寧に、そして迅速に応え、長くお付き合いいただいている協力会社様とも、仕事だからこそ誠実に向き合い、信頼を積み重ねていく。それが、良い現場をつくるために欠かせないことだと思っています。
+              </p>
+              <p class="letter-quote">『足元から未来を支える。』</p>
+              <p class="letter-p">
+                これからも現場に立つ一人ひとりの仕事を支え、その先にある建物と、そこで暮らす人・働く人の未来まで支えられる仕事を続けていきます。
+              </p>
+              <div class="letter-sign">
+                <div class="letter-sign-name">
+                  <span>株式会社 拓乃　代表取締役</span>
+                  <strong>岡田 拓磨</strong>
+                </div>
+                <img
+                  src="assets/face.jpg"
+                  alt="代表取締役 岡田 拓磨"
+                  loading="lazy"
+                />
               </div>
-              <div
-                style="
-                  font-size: clamp(14px, 1.7vw, 15px);
-                  line-height: 2.15;
-                  letter-spacing: 0.02em;
-                  color: rgba(255, 255, 255, 0.8);
-                  display: flex;
-                  flex-direction: column;
-                  gap: 28px;
-                "
-              >
-                <p style="margin: 0">
-                  20年以上、現場に立ち続ける中で、私が大切にしてきたのは、<br />一つひとつの仕事に、本気で向き合うことです。
-                </p>
-                <p style="margin: 0">
-                  足場は、ただ建物を囲うものではありません。<br />その上で職人が仕事をし、建物が仕上がっていく。<br />だからこそ、安全であることはもちろん、実際に使う職人の目線に立ち、使いやすさまで考え抜いた足場でなければならないと考えています。
-                </p>
-                <p style="margin: 0">
-                  現場では、業者様とのコミュニケーションを何より大切にしています。
-                </p>
-                <p style="margin: 0">
-                  要望に対して丁寧に、そして迅速に応え<br />長くお付き合いいただいている協力会社様とも、仕事だからこそ誠実に向き合い、信頼を積み重ねていく。<br />それが、良い現場をつくるために欠かせないことだと思っています。
-                </p>
-                <p
-                  style="
-                    margin: clamp(4px, 1vw, 12px) 0;
-                    padding: clamp(24px, 3.5vw, 36px) 0;
-                    border-top: 1px solid rgba(255, 255, 255, 0.14);
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-                    text-align: center;
-                    font-family: var(--font-mincho, 'Noto Serif JP', serif);
-                    font-size: clamp(22px, 3.6vw, 30px);
-                    line-height: 1.6;
-                    letter-spacing: 0.1em;
-                    color: #fff;
-                  "
-                >
-                  『足元から未来を支える。』
-                </p>
-                <p style="margin: 0">
-                  これからも現場に立つ一人ひとりの仕事を支え、<br />その先にある建物と、そこで暮らす人・働く人の未来まで支えられる仕事を続けていきます。
-                </p>
-              </div>
-              <div
-                style="
-                  display: flex;
-                  align-items: baseline;
-                  justify-content: flex-end;
-                  gap: 16px;
-                "
-              >
-                <span
-                  style="
-                    font-size: 12px;
-                    letter-spacing: 0.1em;
-                    color: rgba(255, 255, 255, 0.6);
-                  "
-                  >代表取締役</span
-                >
-                <span
-                  style="
-                    font-family: var(--font-mincho, 'Noto Serif JP', serif);
-                    font-size: clamp(20px, 2.6vw, 24px);
-                    letter-spacing: 0.06em;
-                    color: #fff;
-                  "
-                  >岡田 拓磨</span
-                >
-              </div>
+            </article>
             </div>
           </div>
         </section>
@@ -1244,37 +1507,23 @@
               <a
                 class="work-thumb"
                 href="#pic-1"
-                aria-label="施工現場の写真 1 を拡大"
+                aria-label="施工事例の写真 1 を拡大"
               >
-                <img src="assets/site-01.jpeg" alt="" loading="lazy" />
-              </a>
-              <a
-                class="work-thumb"
-                href="#pic-2"
-                aria-label="施工現場の写真 2 を拡大"
-              >
-                <img src="assets/site-02.jpeg" alt="" loading="lazy" />
+                <img src="assets/example1.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-3"
-                aria-label="施工現場の写真 3 を拡大"
+                aria-label="施工事例の写真 2 を拡大"
               >
-                <img src="assets/site-03.jpeg" alt="" loading="lazy" />
+                <img src="assets/example3.jpg" alt="" loading="lazy" />
               </a>
               <a
                 class="work-thumb"
                 href="#pic-4"
-                aria-label="施工現場の写真 4 を拡大"
+                aria-label="施工事例の写真 3 を拡大"
               >
-                <img src="assets/site-04.jpeg" alt="" loading="lazy" />
-              </a>
-              <a
-                class="work-thumb"
-                href="#pic-5"
-                aria-label="施工現場の写真 5 を拡大"
-              >
-                <img src="assets/site-05.jpeg" alt="" loading="lazy" />
+                <img src="assets/example4.jpg" alt="" loading="lazy" />
               </a>
               </div>
           </div>
@@ -1330,25 +1579,62 @@
             </div>
             <div
               style="
-                flex: 1 1 320px;
-                position: relative;
-                width: 100%;
-                aspect-ratio: 4/3;
-                box-shadow: 0 2px 12px rgba(0, 24, 62, 0.08);
+                flex: 1 1 340px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+                gap: 14px;
               "
             >
-              <img
-                src="assets/office-exterior.jpeg"
-                alt="株式会社 拓乃 会社外観"
-                style="
-                  position: absolute;
-                  inset: 0;
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  display: block;
-                "
-              />
+              <figure style="margin: 0">
+                <span
+                  style="
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 4/3;
+                    display: block;
+                    box-shadow: 0 2px 12px rgba(0, 24, 62, 0.08);
+                  "
+                >
+                  <img
+                    src="assets/view.jpg"
+                    alt="株式会社 拓乃 会社外観（昼）"
+                    loading="lazy"
+                    style="
+                      position: absolute;
+                      inset: 0;
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      display: block;
+                    "
+                  />
+                </span>
+              </figure>
+              <figure style="margin: 0">
+                <span
+                  style="
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 4/3;
+                    display: block;
+                    box-shadow: 0 2px 12px rgba(0, 24, 62, 0.08);
+                  "
+                >
+                  <img
+                    src="assets/view_night.jpg"
+                    alt="株式会社 拓乃 会社外観（夜のイルミネーション）"
+                    loading="lazy"
+                    style="
+                      position: absolute;
+                      inset: 0;
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      display: block;
+                    "
+                  />
+                </span>
+              </figure>
             </div>
           </div>
         </section>
@@ -2040,39 +2326,25 @@
   <a class="tel" href="#tel"><span>☎</span>お電話はこちら</a>
   <a class="form" href="#contact">お問い合わせ<span>→</span></a>
 </div>
-<div class="lightbox" id="pic-1" role="dialog" aria-label="施工現場の写真 1">
-  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
-  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
-  <a class="lb-btn lb-prev" href="#pic-5" aria-label="前の写真">‹</a>
-  <img src="assets/site-01.jpeg" alt="" />
-  <a class="lb-btn lb-next" href="#pic-2" aria-label="次の写真">›</a>
-</div>
-<div class="lightbox" id="pic-2" role="dialog" aria-label="施工現場の写真 2">
-  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
-  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
-  <a class="lb-btn lb-prev" href="#pic-1" aria-label="前の写真">‹</a>
-  <img src="assets/site-02.jpeg" alt="" />
-  <a class="lb-btn lb-next" href="#pic-3" aria-label="次の写真">›</a>
-</div>
-<div class="lightbox" id="pic-3" role="dialog" aria-label="施工現場の写真 3">
-  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
-  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
-  <a class="lb-btn lb-prev" href="#pic-2" aria-label="前の写真">‹</a>
-  <img src="assets/site-03.jpeg" alt="" />
-  <a class="lb-btn lb-next" href="#pic-4" aria-label="次の写真">›</a>
-</div>
-<div class="lightbox" id="pic-4" role="dialog" aria-label="施工現場の写真 4">
-  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
-  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
-  <a class="lb-btn lb-prev" href="#pic-3" aria-label="前の写真">‹</a>
-  <img src="assets/site-04.jpeg" alt="" />
-  <a class="lb-btn lb-next" href="#pic-5" aria-label="次の写真">›</a>
-</div>
-<div class="lightbox" id="pic-5" role="dialog" aria-label="施工現場の写真 5">
+<div class="lightbox" id="pic-1" role="dialog" aria-label="施工事例の写真 1">
   <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
   <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
   <a class="lb-btn lb-prev" href="#pic-4" aria-label="前の写真">‹</a>
-  <img src="assets/site-05.jpeg" alt="" />
+  <img src="assets/example1.jpg" alt="" />
+  <a class="lb-btn lb-next" href="#pic-3" aria-label="次の写真">›</a>
+</div>
+<div class="lightbox" id="pic-3" role="dialog" aria-label="施工事例の写真 2">
+  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+  <a class="lb-btn lb-prev" href="#pic-1" aria-label="前の写真">‹</a>
+  <img src="assets/example3.jpg" alt="" />
+  <a class="lb-btn lb-next" href="#pic-4" aria-label="次の写真">›</a>
+</div>
+<div class="lightbox" id="pic-4" role="dialog" aria-label="施工事例の写真 3">
+  <a class="lb-backdrop" href="#works" aria-label="閉じる"></a>
+  <a class="lb-btn lb-close" href="#works" aria-label="閉じる">✕</a>
+  <a class="lb-btn lb-prev" href="#pic-3" aria-label="前の写真">‹</a>
+  <img src="assets/example4.jpg" alt="" />
   <a class="lb-btn lb-next" href="#pic-1" aria-label="次の写真">›</a>
 </div>
 </body>
