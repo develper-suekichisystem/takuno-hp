@@ -2269,7 +2269,7 @@
           >
             <div
               style="
-                flex: 2 1 480px;
+                flex: 1 1 100%;
                 display: flex;
                 flex-direction: column;
                 gap: clamp(28px, 4vw, 40px);
@@ -2304,213 +2304,77 @@
                     color: #354a5e;
                   "
                 >
-                  足場工事のご相談、お見積りのご依頼を承ります。内容を確認のうえ、担当者より折り返しご連絡いたします。
+                  足場工事のご相談、お見積りのご依頼を承ります。お電話またはメールにてお気軽にお問い合わせください。
                 </p>
               </div>
-              <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-                <div
-                  style="
-                    background: #fff;
-                    padding: clamp(24px, 4vw, 40px);
-                    display: flex;
-                    flex-direction: column;
-                    gap: 12px;
-                  "
-                >
-                  <p
-                    style="
-                      margin: 0;
-                      font-family: var(--font-mincho, 'Noto Serif JP', serif);
-                      font-size: clamp(18px, 2.6vw, 22px);
-                      letter-spacing: 0.06em;
-                      color: #062242;
-                    "
-                  >
-                    送信を承りました
-                  </p>
-                  <p style="margin: 0; font-size: 14px; line-height: 1.9">
-                    内容を確認のうえ、担当者より折り返しご連絡いたします。お急ぎの場合はお電話にてご連絡ください。
-                  </p>
-                </div>
-              </sc-if>
-              <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-                <form
-                  onSubmit="{{ onSubmit }}"
-                  style="display: flex; flex-direction: column; gap: 24px"
-                >
-                  <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
-                    <p
-                      style="
-                        margin: 0;
-                        padding: 14px 16px;
-                        background: #fdf0f0;
-                        border-left: 3px solid #b4453d;
-                        font-size: 14px;
-                        line-height: 1.8;
-                        color: #8c332d;
-                      "
-                    >
-                      {{ error }}
-                    </p>
-                  </sc-if>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: repeat(
-                        auto-fit,
-                        minmax(220px, 1fr)
-                      );
-                      gap: 24px;
-                    "
-                  >
-                    <x-import
-                      component-from-global-scope="DesignSystem_03e58a.Input"
-                      label="お名前"
-                      required="{{ true }}"
-                      value="{{ f.name }}"
-                      onChange="{{ setName }}"
-                      placeholder="山田 太郎"
-                      hint-size="100%,86px"
-                    ></x-import>
-                    <x-import
-                      component-from-global-scope="DesignSystem_03e58a.Input"
-                      label="会社名"
-                      value="{{ f.company }}"
-                      onChange="{{ setCompany }}"
-                      placeholder="株式会社〇〇"
-                      hint-size="100%,86px"
-                    ></x-import>
-                    <x-import
-                      component-from-global-scope="DesignSystem_03e58a.Input"
-                      label="電話番号"
-                      required="{{ true }}"
-                      type="tel"
-                      value="{{ f.tel }}"
-                      onChange="{{ setTel }}"
-                      placeholder="0562-00-0000"
-                      hint-size="100%,86px"
-                    ></x-import>
-                    <x-import
-                      component-from-global-scope="DesignSystem_03e58a.Input"
-                      label="メールアドレス"
-                      required="{{ true }}"
-                      type="email"
-                      value="{{ f.email }}"
-                      onChange="{{ setEmail }}"
-                      placeholder="info@example.jp"
-                      hint-size="100%,86px"
-                    ></x-import>
-                  </div>
-                  <x-import
-                    component-from-global-scope="DesignSystem_03e58a.Select"
-                    label="ご相談の内容"
-                    required="{{ true }}"
-                    options="{{ topics }}"
-                    value="{{ f.topic }}"
-                    onChange="{{ setTopic }}"
-                    hint-size="100%,86px"
-                  ></x-import>
-                  <x-import
-                    component-from-global-scope="DesignSystem_03e58a.Textarea"
-                    label="お問い合わせ内容"
-                    required="{{ true }}"
-                    value="{{ f.body }}"
-                    onChange="{{ setBody }}"
-                    placeholder="現場の所在地、建物の規模、ご希望の時期などをご記入ください。"
-                    hint-size="100%,180px"
-                  ></x-import>
-                  <button
-                    type="submit"
-                    style="
-                      align-self: stretch;
-                      max-width: 280px;
-                      display: inline-flex;
-                      align-items: center;
-                      justify-content: center;
-                      gap: 10px;
-                      min-height: 52px;
-                      padding: 14px 32px;
-                      background: #062242;
-                      color: #fff;
-                      font-family: inherit;
-                      font-size: 15px;
-                      letter-spacing: 0.08em;
-                      border: 0;
-                      border-radius: 2px;
-                      cursor: pointer;
-                      transition: background 160ms
-                        cubic-bezier(0.22, 0.61, 0.36, 1);
-                    "
-                    style-hover="background:#034683"
-                  >
-                    送信する<span>→</span>
-                  </button>
-                </form>
-              </sc-if>
-            </div>
-            <aside
-              id="tel"
-              style="
-                flex: 1 1 300px;
-                background: #fff;
-                padding: clamp(28px, 4vw, 40px) clamp(20px, 3vw, 32px);
-                display: flex;
-                flex-direction: column;
-                gap: 24px;
-              "
-            >
-              <p
-                style="
-                  margin: 0;
-                  font-family: var(--font-mincho, 'Noto Serif JP', serif);
-                  font-size: 18px;
-                  letter-spacing: 0.06em;
-                  color: #062242;
-                "
-              >
-                お電話でのご相談
-              </p>
-              <div style="display: flex; flex-direction: column; gap: 6px">
-                <a
-                  href="tel:0562859488"
-                  style="
-                    font-family: var(--font-mincho, 'Noto Serif JP', serif);
-                    font-size: clamp(24px, 3.4vw, 28px);
-                    letter-spacing: 0.04em;
-                    color: #062242;
-                  "
-                  >0562-85-9488</a
-                >
-                <span style="font-size: 13px; color: #596675"
-                  >FAX 0562-22-5296</span
-                >
-              </div>
-              <div style="height: 1px; background: #d8dfe8"></div>
               <div
                 style="
+                  background: #fff;
+                  padding: clamp(28px, 4vw, 44px);
+                  max-width: 640px;
                   display: flex;
                   flex-direction: column;
-                  gap: 10px;
-                  font-size: 14px;
-                  line-height: 1.8;
+                  gap: clamp(20px, 3vw, 28px);
                 "
               >
-                <div style="display: flex; gap: 12px">
-                  <span style="width: 18px; text-align: center; color: #034683"
-                    >◆</span
-                  ><span>〒470-2104<br />愛知県知多郡東浦町生路上坪釜23-1</span>
+                <p
+                  style="
+                    margin: 0;
+                    font-family: var(--font-mincho, 'Noto Serif JP', serif);
+                    font-size: clamp(18px, 2.6vw, 22px);
+                    letter-spacing: 0.06em;
+                    color: #062242;
+                  "
+                >
+                  お問い合わせはこちらから
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 8px">
+                  <span
+                    style="
+                      font-size: 11px;
+                      letter-spacing: 0.24em;
+                      color: #034683;
+                    "
+                    >TEL</span
+                  >
+                  <a
+                    href="tel:0562859488"
+                    style="
+                      font-family: var(--font-mincho, 'Noto Serif JP', serif);
+                      font-size: clamp(26px, 4vw, 34px);
+                      letter-spacing: 0.04em;
+                      color: #062242;
+                    "
+                    >0562-85-9488</a
+                  >
+                  <span style="font-size: 13px; color: #596675"
+                    >FAX 0562-22-5296</span
+                  >
                 </div>
-                <div style="display: flex; gap: 12px">
-                  <span style="width: 18px; text-align: center; color: #034683"
-                    >✉</span
-                  ><a
+                <div style="height: 1px; background: #d8dfe8"></div>
+                <div style="display: flex; flex-direction: column; gap: 8px">
+                  <span
+                    style="
+                      font-size: 11px;
+                      letter-spacing: 0.24em;
+                      color: #034683;
+                    "
+                    >MAIL</span
+                  >
+                  <a
                     href="mailto:okada.tmrkn@outlook.jp"
-                    style="word-break: break-all"
+                    style="
+                      font-family: var(--font-mincho, 'Noto Serif JP', serif);
+                      font-size: clamp(18px, 2.8vw, 24px);
+                      letter-spacing: 0.02em;
+                      color: #062242;
+                      word-break: break-all;
+                    "
                     >okada.tmrkn@outlook.jp</a
                   >
                 </div>
               </div>
-            </aside>
+            </div>
           </div>
         </section>
 
@@ -2652,68 +2516,6 @@
         </footer>
       </div>
     </x-dc>
-    <script type="text/x-dc" data-dc-script>
-      /* フォーム送信先のエンドポイント（Formspree 等）をここに入れる。
-         空の間は送信されず、完了画面だけ表示される。
-         例: 'https://formspree.io/f/xxxxxxxx' */
-      const FORM_ENDPOINT = '';
-      const OWNER_MAIL = 'okada.tmrkn@outlook.jp';
-
-      class Component extends DCLogic {
-        state = { sent: false, sending: false, error: '', f: { name: '', company: '', tel: '', email: '', topic: '', body: '' } };
-        set(k) {
-          return v => this.setState(s => ({ f: { ...s.f, [k]: v } }));
-        }
-        async send() {
-          const f = this.state.f;
-          const res = await fetch(FORM_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({
-              _replyto: f.email,
-              _to: OWNER_MAIL,
-              _subject: '【拓乃】ホームページからのお問い合わせ',
-              お名前: f.name,
-              会社名: f.company,
-              電話番号: f.tel,
-              メールアドレス: f.email,
-              ご相談の内容: f.topic,
-              お問い合わせ内容: f.body
-            })
-          });
-          if (!res.ok) throw new Error('send failed');
-        }
-        renderVals() {
-          return {
-            sent: this.state.sent,
-            notSent: !this.state.sent,
-            sending: this.state.sending,
-            error: this.state.error,
-            hasError: !!this.state.error,
-            f: this.state.f,
-            topics: ['足場工事一式', '外壁塗装', '屋根工事', '防水工事', '各種リフォーム', 'その他のご相談'],
-            setName: this.set('name'),
-            setCompany: this.set('company'),
-            setTel: this.set('tel'),
-            setEmail: this.set('email'),
-            setTopic: this.set('topic'),
-            setBody: this.set('body'),
-            onSubmit: async e => {
-              e.preventDefault();
-              if (this.state.sending) return;
-              if (!FORM_ENDPOINT) { this.setState({ sent: true }); return; }
-              this.setState({ sending: true, error: '' });
-              try {
-                await this.send();
-                this.setState({ sent: true, sending: false });
-              } catch (err) {
-                this.setState({ sending: false, error: '送信に失敗しました。時間をおいて再度お試しいただくか、お電話にてご連絡ください。' });
-              }
-            }
-          };
-        }
-      }
-    </script>
     <input type="checkbox" id="navToggle" aria-label="メニュー" />
     <label class="nav-scrim" for="navToggle" aria-hidden="true"></label>
     <nav class="nav-drawer" aria-label="メニュー">
@@ -2746,7 +2548,7 @@
       >
     </nav>
     <div class="cta-bar" id="ctaBar">
-      <a class="tel" href="#tel"><span>☎</span>お電話はこちら</a>
+      <a class="tel" href="tel:0562859488"><span>☎</span>お電話はこちら</a>
       <a class="form" href="#contact">お問い合わせ<span>→</span></a>
     </div>
     <div
